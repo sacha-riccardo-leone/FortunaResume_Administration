@@ -20,17 +20,10 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-6 md:px-10 lg:px-16">
         <div className="grid grid-cols-12 gap-6">
           <motion.div {...reveal(0)} className="col-span-12 lg:col-span-2">
-            <span className="text-eyebrow uppercase text-ink-faint">01 — Identité</span>
+            <span className="text-eyebrow uppercase text-ink-faint">01 — Profil</span>
           </motion.div>
 
           <div className="col-span-12 lg:col-span-10">
-            <motion.p
-              {...reveal(0.1)}
-              className="text-eyebrow uppercase text-ink-muted mb-8"
-            >
-              Curriculum Vitæ · Profil Administratif
-            </motion.p>
-
             <motion.h1
               {...reveal(0.2)}
               className="font-display font-light text-display-xl text-ink"
@@ -46,7 +39,7 @@ export default function Hero() {
             >
               <div className="md:col-span-7 max-w-xl">
                 <p className="text-ink-muted text-lg leading-relaxed">
-                  {identity.role}. {identity.tagline}.
+                  {identity.tagline}.
                 </p>
                 <p className="mt-3 text-sm text-ink-subtle">
                   Basée à {contact.postal.split(" ").slice(1).join(" ")}, disponible {identity.availability}.
@@ -75,14 +68,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <motion.div
-          {...reveal(0.8)}
-          className="mt-24 flex items-center gap-6 text-eyebrow uppercase text-ink-faint"
-        >
-          <span>Défilez</span>
-          <span className="h-px flex-1 bg-paper-line" />
-          <span>Curriculum détaillé</span>
-        </motion.div>
       </div>
     </section>
   );

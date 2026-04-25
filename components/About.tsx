@@ -10,12 +10,11 @@ export default function About() {
     { label: "Née le", value: identity.birth },
     { label: "Nationalité", value: identity.nationality },
     { label: "Disponibilité", value: identity.availability },
-    { label: "Profil", value: "Administratif" },
   ];
 
   return (
-    <Section id="profil" index="02" eyebrow="Profil" title="Collaboratrice administrative, structurée et fiable.">
-      <div className="grid grid-cols-12 gap-10">
+    <Section id="profil" index="02" eyebrow="Description">
+      <div className="grid grid-cols-12 gap-y-10 md:gap-10">
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

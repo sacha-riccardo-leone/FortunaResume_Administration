@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Fraunces, JetBrains_Mono } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { resumeData } from "@/lib/data";
 import "./globals.css";
 
 const sans = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-sans",
-  display: "swap",
-});
-
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
   display: "swap",
 });
 
@@ -36,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${sans.variable} ${display.variable} ${mono.variable}`}>
+    <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
       <body className="font-sans text-ink bg-paper antialiased">{children}</body>
     </html>
   );

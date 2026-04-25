@@ -34,7 +34,7 @@ export default function Contact() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="font-display font-light text-display-lg max-w-4xl leading-[1.05]"
         >
-          Entrons en <span className="italic">conversation.</span>
+          À disposition pour échange <span className="italic">professionnel.</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}

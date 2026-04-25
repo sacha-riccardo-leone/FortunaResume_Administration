@@ -13,7 +13,7 @@ export default function Section({
 }: {
   id: string;
   eyebrow: string;
-  title: string;
+  title?: string;
   index: string;
   children: ReactNode;
   tone?: "light" | "soft";
@@ -36,15 +36,17 @@ export default function Section({
               {index} — {eyebrow}
             </span>
           </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 lg:col-span-10 font-display font-light text-display-md text-ink"
-          >
-            {title}
-          </motion.h2>
+          {title ? (
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="col-span-12 lg:col-span-10 font-display font-light text-display-md text-ink"
+            >
+              {title}
+            </motion.h2>
+          ) : null}
         </div>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-start-3 lg:col-span-10">{children}</div>

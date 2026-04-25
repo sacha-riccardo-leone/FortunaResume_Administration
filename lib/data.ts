@@ -36,6 +36,7 @@ export const resumeData = {
         "Coordination quotidienne avec l’équipe pour respecter les délais et les standards.",
         "Gestion du temps et priorisation des tâches dans un environnement à forte cadence.",
       ],
+      highlight: "",
     },
     {
       period: "2016 — 2019",
@@ -61,6 +62,7 @@ export const resumeData = {
         "Mise en rayon, étiquetage et suivi de la bonne présentation du magasin.",
         "Adaptabilité et réactivité lors des périodes de forte affluence.",
       ],
+      highlight: "",
     },
   ],
   education: [

@@ -42,12 +42,12 @@ export default function Experience() {
               <ul className="mt-6 space-y-3">
                 {exp.bullets.map((b, bi) => (
                   <li key={bi} className="flex text-ink-soft leading-relaxed">
-                    <span className="mr-4 mt-2 h-px w-4 flex-none bg-ink-faint" aria-hidden />
+                    <span className="mr-4 mt-[0.7em] h-px w-4 flex-none bg-ink-faint" aria-hidden />
                     <span>{b}</span>
                   </li>
                 ))}
               </ul>
-              {"highlight" in exp && exp.highlight ? (
+              {"highlight" in exp ? (
                 <p className="mt-5 pl-4 border-l-2 border-ink text-sm italic text-ink-muted">
                   Réalisation — {exp.highlight}
                 </p>

@@ -57,7 +57,7 @@ export default function Nav() {
               F
             </span>
             <span className="font-display text-sm tracking-tight hidden sm:inline">
-              Fortuna Chung
+              Fortuna Chung Ming Kan
             </span>
           </a>
 

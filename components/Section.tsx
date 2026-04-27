@@ -32,7 +32,7 @@ export default function Section({
             transition={{ duration: 0.6 }}
             className="col-span-12 lg:col-span-2"
           >
-            <span className="text-eyebrow uppercase text-ink-faint">
+            <span className="text-[0.58rem] tracking-[0.08em] sm:text-eyebrow uppercase text-ink-faint whitespace-nowrap">
               {index} — {eyebrow}
             </span>
           </motion.div>

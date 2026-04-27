@@ -10,7 +10,6 @@ export default function Experience() {
       id="experience"
       index="03"
       eyebrow="Expérience"
-      title="Parcours professionnel."
       tone="soft"
     >
       <ol className="relative">

@@ -6,7 +6,7 @@ import { resumeData } from "@/lib/data";
 
 export default function Education() {
   return (
-    <Section id="formation" index="05" eyebrow="Formation" title="Parcours académique." tone="soft">
+    <Section id="formation" index="05" eyebrow="Formation" tone="soft">
       <ul className="divide-y divide-paper-line border-t border-b border-paper-line">
         {resumeData.education.map((e, i) => (
           <motion.li

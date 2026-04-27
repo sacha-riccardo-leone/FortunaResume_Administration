@@ -2,18 +2,19 @@
 
 import { motion } from "framer-motion";
 import Section from "./Section";
-import { resumeData } from "@/lib/data";
+import { useLocale } from "./LocaleProvider";
 
 export default function About() {
-  const { profile, identity } = resumeData;
+  const { data, t } = useLocale();
+  const { profile, identity } = data;
   const facts = [
-    { label: "Née le", value: identity.birth },
-    { label: "Nationalité", value: identity.nationality },
-    { label: "Disponibilité", value: identity.availability },
+    { label: t.about.bornOn, value: identity.birth },
+    { label: t.about.nationality, value: identity.nationality },
+    { label: t.about.availability, value: identity.availability },
   ];
 
   return (
-    <Section id="profil" index="02" eyebrow="Description">
+    <Section id="profil" index="02" eyebrow={t.about.eyebrow}>
       <div className="grid grid-cols-12 gap-y-10 md:gap-10">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

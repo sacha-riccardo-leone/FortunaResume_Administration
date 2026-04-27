@@ -2,16 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
-const links = [
-  { href: "#profil", label: "Profil" },
-  { href: "#experience", label: "Expérience" },
-  { href: "#competences", label: "Compétences" },
-  { href: "#formation", label: "Formation" },
-  { href: "#contact", label: "Contact" },
-];
+import { useLocale } from "./LocaleProvider";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 export default function Nav() {
+  const { t, data } = useLocale();
+  const links = [
+    { href: "#profil", label: t.nav.profil },
+    { href: "#experience", label: t.nav.experience },
+    { href: "#competences", label: t.nav.competences },
+    { href: "#formation", label: t.nav.formation },
+    { href: "#contact", label: t.nav.contact },
+  ];
+
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -70,16 +73,17 @@ export default function Nav() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 md:gap-4">
+            <LocaleSwitcher className="hidden md:flex" />
             <a
               href="#contact"
-              className="hidden sm:inline-flex text-[12px] md:text-[13px] px-3 md:px-4 py-2 rounded-full bg-ink text-paper hover:bg-ink-soft transition-colors"
+              className="hidden lg:inline-flex text-[12px] md:text-[13px] px-3 md:px-4 py-2 rounded-full bg-ink text-paper hover:bg-ink-soft transition-colors"
             >
-              Prendre contact
+              {t.nav.cta}
             </a>
             <button
               type="button"
-              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
               className="md:hidden relative h-10 w-10 flex items-center justify-center rounded-full border border-paper-line bg-paper text-ink"
@@ -115,7 +119,7 @@ export default function Nav() {
             <div className="absolute inset-0 dot-grid opacity-50" aria-hidden />
             <div className="relative flex flex-col h-full pt-24 pb-10 px-6 sm:px-10">
               <span className="text-eyebrow uppercase text-ink-faint mb-8">
-                Navigation
+                {t.nav.navigation}
               </span>
               <nav className="flex flex-col gap-5">
                 {links.map((l, i) => (
@@ -135,25 +139,33 @@ export default function Nav() {
                   </motion.a>
                 ))}
               </nav>
-              <div className="mt-auto pt-10 border-t border-paper-line">
-                <div className="text-eyebrow uppercase text-ink-faint mb-2">
-                  Contact direct
+              <div className="mt-auto pt-10 border-t border-paper-line space-y-6">
+                <div>
+                  <div className="text-eyebrow uppercase text-ink-faint mb-3">
+                    {t.nav.selectLanguage}
+                  </div>
+                  <LocaleSwitcher variant="stacked" />
                 </div>
-                <a
-                  href="mailto:chungfortuna@gmail.com"
-                  onClick={() => setOpen(false)}
-                  className="font-display text-lg text-ink break-all link-reveal"
-                >
-                  chungfortuna@gmail.com
-                </a>
-                <div className="mt-2">
+                <div>
+                  <div className="text-eyebrow uppercase text-ink-faint mb-2">
+                    {t.nav.contactDirect}
+                  </div>
                   <a
-                    href="tel:+41787150997"
+                    href={`mailto:${data.contact.email}`}
                     onClick={() => setOpen(false)}
-                    className="font-mono text-sm text-ink-muted link-reveal"
+                    className="font-display text-lg text-ink break-all link-reveal"
                   >
-                    +41 78 715 09 97
+                    {data.contact.email}
                   </a>
+                  <div className="mt-2">
+                    <a
+                      href={`tel:${data.contact.phone}`}
+                      onClick={() => setOpen(false)}
+                      className="font-mono text-sm text-ink-muted link-reveal"
+                    >
+                      {data.contact.phone}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

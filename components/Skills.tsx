@@ -2,18 +2,19 @@
 
 import { motion } from "framer-motion";
 import Section from "./Section";
-import { resumeData } from "@/lib/data";
+import { useLocale } from "./LocaleProvider";
 
 export default function Skills() {
-  const { skills, languages } = resumeData;
+  const { data, t } = useLocale();
+  const { skills, languages } = data;
   const groups = [
-    { title: "Outils bureautiques", items: skills.tools },
-    { title: "Compétences administratives", items: skills.admin },
-    { title: "Aptitudes personnelles", items: skills.human },
+    { title: t.skills.tools, items: skills.tools },
+    { title: t.skills.admin, items: skills.admin },
+    { title: t.skills.human, items: skills.human },
   ];
 
   return (
-    <Section id="competences" index="04" eyebrow="Compétences / Savoir faire, savoir être">
+    <Section id="competences" index="04" eyebrow={t.skills.eyebrow}>
       <div className="grid grid-cols-12 gap-y-10 md:gap-10">
         <div className="col-span-12 md:col-span-8 space-y-10">
           {groups.map((g, gi) => (
@@ -46,7 +47,7 @@ export default function Skills() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-eyebrow uppercase text-ink-faint mb-6">Langues</h3>
+            <h3 className="text-eyebrow uppercase text-ink-faint mb-6">{t.skills.languages}</h3>
             <ul className="space-y-5">
               {languages.map((l) => (
                 <li key={l.name}>

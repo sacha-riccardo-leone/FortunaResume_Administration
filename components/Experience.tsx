@@ -2,18 +2,19 @@
 
 import { motion } from "framer-motion";
 import Section from "./Section";
-import { resumeData } from "@/lib/data";
+import { useLocale } from "./LocaleProvider";
 
 export default function Experience() {
+  const { data, t } = useLocale();
   return (
     <Section
       id="experience"
       index="03"
-      eyebrow="Expérience"
+      eyebrow={t.experience.eyebrow}
       tone="soft"
     >
       <ol className="relative">
-        {resumeData.experience.map((exp, i) => (
+        {data.experience.map((exp, i) => (
           <motion.li
             key={i}
             initial={{ opacity: 0, y: 24 }}
@@ -24,7 +25,7 @@ export default function Experience() {
           >
             <div className="col-span-12 md:col-span-3">
               <div className="text-eyebrow uppercase text-ink-faint mb-2">
-                {String(i + 1).padStart(2, "0")} / {String(resumeData.experience.length).padStart(2, "0")}
+                {String(i + 1).padStart(2, "0")} / {String(data.experience.length).padStart(2, "0")}
               </div>
               <div className="font-mono text-sm text-ink">{exp.period}</div>
               <div className="mt-1 text-sm text-ink-subtle">{exp.location}</div>
@@ -48,7 +49,7 @@ export default function Experience() {
               </ul>
               {"highlight" in exp ? (
                 <p className="mt-5 pl-4 border-l-2 border-ink text-sm italic text-ink-muted">
-                  Réalisation — {exp.highlight}
+                  {t.experience.achievement} — {exp.highlight}
                 </p>
               ) : null}
             </div>

@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import Section from "./Section";
-import { resumeData } from "@/lib/data";
+import { useLocale } from "./LocaleProvider";
 
 export default function Education() {
+  const { data, t } = useLocale();
   return (
-    <Section id="formation" index="05" eyebrow="Formation" tone="soft">
+    <Section id="formation" index="05" eyebrow={t.education.eyebrow} tone="soft">
       <ul className="divide-y divide-paper-line border-t border-b border-paper-line">
-        {resumeData.education.map((e, i) => (
+        {data.education.map((e, i) => (
           <motion.li
             key={i}
             initial={{ opacity: 0, y: 12 }}
@@ -29,7 +30,7 @@ export default function Education() {
       </ul>
 
       <div className="mt-10 flex flex-wrap gap-3">
-        {resumeData.interests.map((i) => (
+        {data.interests.map((i) => (
           <span
             key={i}
             className="text-xs px-3 py-1.5 rounded-full border border-ink/20 text-ink-muted"

@@ -66,3 +66,42 @@ body {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* ───────────────────────────────────────────────────────────────
+   Print: A4 resume layout
+   ─────────────────────────────────────────────────────────────── */
+@page {
+  size: A4;
+  margin: 14mm;
+}
+
+@media print {
+  html {
+    scroll-behavior: auto;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #0a0a0a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* No animations, transitions, or transforms in print */
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  /* Framer Motion sets opacity:0 inline pre-animation; force it visible
+     for print since we skip animation triggers. Only affects nodes that
+     remain visible in print (i.e. inside PrintLayout). */
+  [style*="opacity:0"],
+  [style*="opacity: 0"] {
+    opacity: 1 !important;
+  }
+}

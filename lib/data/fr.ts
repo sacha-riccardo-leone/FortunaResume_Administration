@@ -1,4 +1,6 @@
-export const resumeData = {
+import type { ResumeData } from "./types";
+
+export const fr: ResumeData = {
   meta: {
     siteTitle: "Fortuna Chung — Profil Administratif",
     siteDescription:
@@ -114,5 +116,3 @@ export const resumeData = {
   ],
   interests: ["Photographie", "Outils numériques & communication", "Langues étrangères"],
 };
-
-export type ResumeData = typeof resumeData;

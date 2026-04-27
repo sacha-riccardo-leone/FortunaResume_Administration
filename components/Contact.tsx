@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { resumeData } from "@/lib/data";
+import { useLocale } from "./LocaleProvider";
 
 export default function Contact() {
-  const { contact, identity } = resumeData;
+  const { data, t } = useLocale();
+  const { contact, identity } = data;
 
   return (
     <section id="contact" className="relative py-32 md:py-40 bg-ink text-paper overflow-hidden">
@@ -25,7 +26,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-eyebrow uppercase text-paper/60 mb-8"
         >
-          06 — Contact
+          06 — {t.contact.eyebrow}
         </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
@@ -34,7 +35,8 @@ export default function Contact() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="font-display font-light text-display-lg max-w-4xl leading-[1.05]"
         >
-          À disposition pour échange <span className="italic">professionnel.</span>
+          {t.contact.headlineLead}
+          <span className="italic">{t.contact.headlineEmphasis}</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -43,8 +45,7 @@ export default function Contact() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-6 max-w-2xl text-paper/70 leading-relaxed"
         >
-          Pour toute opportunité administrative, réponse sous 48 heures. Disponibilité{" "}
-          {identity.availability} — {contact.postal}, Suisse et environs.
+          {t.contact.pitch(identity.availability, contact.postal)}
         </motion.p>
 
         <motion.div
@@ -55,7 +56,7 @@ export default function Contact() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-paper/20 pt-10"
         >
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">E-mail</div>
+            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.emailLabel}</div>
             <a
               href={`mailto:${contact.email}`}
               className="text-xl md:text-2xl font-display link-reveal break-all"
@@ -64,13 +65,13 @@ export default function Contact() {
             </a>
           </div>
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">Téléphone</div>
+            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.phoneLabel}</div>
             <a href={`tel:${contact.phone}`} className="text-xl md:text-2xl font-display link-reveal">
               {contact.phoneFormatted}
             </a>
           </div>
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">Adresse</div>
+            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.addressLabel}</div>
             <p className="text-xl md:text-2xl font-display leading-tight">
               {contact.address}
               <br />
@@ -90,7 +91,7 @@ export default function Contact() {
             href={`mailto:${contact.email}`}
             className="group inline-flex items-center gap-4 rounded-full border border-paper px-6 py-4 text-paper hover:bg-paper hover:text-ink transition-colors duration-500"
           >
-            <span className="font-display text-lg">Envoyer un message</span>
+            <span className="font-display text-lg">{t.contact.cta}</span>
             <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
           </a>
         </motion.div>

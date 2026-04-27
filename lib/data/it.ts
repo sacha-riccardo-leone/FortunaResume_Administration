@@ -38,7 +38,8 @@ export const it: ResumeData = {
         "Coordinamento quotidiano con il team per rispettare scadenze e standard.",
         "Gestione del tempo e prioritizzazione dei compiti in un ambiente ad alto ritmo.",
       ],
-      highlight: "",
+      highlight:
+        "Accesso alla certificazione dei pezzi in pre-assemblaggio dopo la validazione delle diverse postazioni, a testimonianza di una buona versatilità e padronanza degli standard di qualità.",
     },
     {
       period: "2016 — 2019",
@@ -64,7 +65,8 @@ export const it: ResumeData = {
         "Allestimento scaffali, etichettatura e cura della presentazione del negozio.",
         "Adattabilità e reattività nei periodi di forte affluenza.",
       ],
-      highlight: "",
+      highlight:
+        "Gestione autonoma e strategica della disposizione dei prodotti, con una consulenza al cliente che favorisce la decisione d’acquisto, nel rispetto delle aspettative del cliente e nella valorizzazione di prodotti di qualità.",
     },
   ],
   education: [

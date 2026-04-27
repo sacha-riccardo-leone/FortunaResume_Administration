@@ -38,7 +38,8 @@ export const fr: ResumeData = {
         "Coordination quotidienne avec l’équipe pour respecter les délais et les standards.",
         "Gestion du temps et priorisation des tâches dans un environnement à forte cadence.",
       ],
-      highlight: "",
+      highlight:
+        "Accès à la certification des pièces en pré-assemblage après validation des différents postes, reflétant une bonne polyvalence et une maîtrise des standards qualité.",
     },
     {
       period: "2016 — 2019",
@@ -64,7 +65,8 @@ export const fr: ResumeData = {
         "Mise en rayon, étiquetage et suivi de la bonne présentation du magasin.",
         "Adaptabilité et réactivité lors des périodes de forte affluence.",
       ],
-      highlight: "",
+      highlight:
+        "Gestion autonome et stratégique de la mise en place des produits, avec un conseil client favorisant la décision d’achat, dans le respect des attentes du client et la valorisation de produits de qualité.",
     },
   ],
   education: [

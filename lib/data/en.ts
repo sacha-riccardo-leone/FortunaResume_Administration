@@ -38,7 +38,8 @@ export const en: ResumeData = {
         "Daily coordination with the team to meet deadlines and standards.",
         "Time management and task prioritization in a high-paced environment.",
       ],
-      highlight: "",
+      highlight:
+        "Granted pre-assembly parts certification after validation across the different workstations, reflecting strong versatility and command of quality standards.",
     },
     {
       period: "2016 — 2019",
@@ -64,7 +65,8 @@ export const en: ResumeData = {
         "Stocking shelves, labeling, and maintaining store presentation.",
         "Adaptability and responsiveness during peak periods.",
       ],
-      highlight: "",
+      highlight:
+        "Autonomous and strategic management of product display, with client advice that supports the purchase decision, while respecting client expectations and showcasing quality products.",
     },
   ],
   education: [

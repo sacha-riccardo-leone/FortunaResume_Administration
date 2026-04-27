@@ -38,7 +38,8 @@ export const de: ResumeData = {
         "Tägliche Koordination mit dem Team zur Einhaltung von Fristen und Standards.",
         "Zeitmanagement und Priorisierung von Aufgaben in einem schnelllebigen Umfeld.",
       ],
-      highlight: "",
+      highlight:
+        "Zertifizierung für Vor-Montage-Teile nach Validierung an den verschiedenen Arbeitsplätzen — Ausdruck einer ausgeprägten Vielseitigkeit und Beherrschung der Qualitätsstandards.",
     },
     {
       period: "2016 — 2019",
@@ -64,7 +65,8 @@ export const de: ResumeData = {
         "Einräumen, Etikettieren und Pflege der Ladenpräsentation.",
         "Anpassungsfähigkeit und Reaktionsfreude in Stoßzeiten.",
       ],
-      highlight: "",
+      highlight:
+        "Eigenständige und strategische Gestaltung der Warenpräsentation mit kundenorientierter Beratung zur Unterstützung der Kaufentscheidung — unter Wahrung der Kundenerwartungen und Aufwertung hochwertiger Produkte.",
     },
   ],
   education: [

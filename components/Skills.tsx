@@ -13,7 +13,7 @@ export default function Skills() {
   ];
 
   return (
-    <Section id="competences" index="04" eyebrow="Compétences">
+    <Section id="competences" index="04" eyebrow="Compétences / Savoir faire, savoir être">
       <div className="grid grid-cols-12 gap-y-10 md:gap-10">
         <div className="col-span-12 md:col-span-8 space-y-10">
           {groups.map((g, gi) => (

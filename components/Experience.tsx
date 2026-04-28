@@ -48,7 +48,7 @@ export default function Experience() {
                 ))}
               </ul>
               {"highlight" in exp ? (
-                <p className="mt-5 pl-4 border-l-2 border-ink text-sm italic text-ink-muted">
+                <p className="mt-5 pl-4 border-l-2 border-ink text-sm italic text-ink-muted text-justify hyphens-auto">
                   {t.experience.achievement} : {exp.highlight}
                 </p>
               ) : null}

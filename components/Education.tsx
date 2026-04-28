@@ -19,10 +19,10 @@ export default function Education() {
             className="py-6 grid grid-cols-12 gap-4 items-baseline"
           >
             <div className="col-span-3 md:col-span-2 font-mono text-sm text-ink">{e.year}</div>
-            <div className="col-span-9 md:col-span-7 font-display text-lg md:text-xl text-ink">
+            <div className="col-span-9 md:col-span-5 lg:col-span-7 font-display text-lg md:text-xl text-ink">
               {e.title}
             </div>
-            <div className="col-span-12 md:col-span-3 text-sm text-ink-muted md:text-right">
+            <div className="col-span-12 md:col-span-5 lg:col-span-3 text-sm text-ink-muted md:text-right">
               {e.school}
             </div>
           </motion.li>

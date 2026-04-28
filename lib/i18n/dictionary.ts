@@ -123,7 +123,7 @@ const fr: UIDictionary = {
     headlineLead: "À disposition pour échange ",
     headlineEmphasis: "professionnel.",
     pitch: (availability, postal) =>
-      `Pour toute opportunité administrative, réponse sous 48 heures. Disponibilité ${availability} — ${postal}, Suisse et environs.`,
+      `Pour toute opportunité, réponse sous 48 heures. Disponibilité ${availability} — ${postal}, Suisse et environs.`,
     emailLabel: "E-mail",
     phoneLabel: "Téléphone",
     addressLabel: "Adresse",
@@ -202,7 +202,7 @@ const en: UIDictionary = {
     headlineLead: "Available for a professional ",
     headlineEmphasis: "exchange.",
     pitch: (availability, postal) =>
-      `For any administrative opportunity, reply within 48 hours. Availability ${availability} — ${postal}, Switzerland and surroundings.`,
+      `For any opportunity, reply within 48 hours. Availability ${availability} — ${postal}, Switzerland and surroundings.`,
     emailLabel: "Email",
     phoneLabel: "Phone",
     addressLabel: "Address",
@@ -281,7 +281,7 @@ const de: UIDictionary = {
     headlineLead: "Bereit für einen professionellen ",
     headlineEmphasis: "Austausch.",
     pitch: (availability, postal) =>
-      `Für jede Verwaltungsmöglichkeit, Antwort innerhalb von 48 Stunden. Verfügbarkeit ${availability} — ${postal}, Schweiz und Umgebung.`,
+      `Für jede Anfrage, Antwort innerhalb von 48 Stunden. Verfügbarkeit ${availability} — ${postal}, Schweiz und Umgebung.`,
     emailLabel: "E-Mail",
     phoneLabel: "Telefon",
     addressLabel: "Adresse",
@@ -360,7 +360,7 @@ const it: UIDictionary = {
     headlineLead: "Disponibile per uno scambio ",
     headlineEmphasis: "professionale.",
     pitch: (availability, postal) =>
-      `Per qualsiasi opportunità amministrativa, risposta entro 48 ore. Disponibilità ${availability} — ${postal}, Svizzera e dintorni.`,
+      `Per qualsiasi opportunità, risposta entro 48 ore. Disponibilità ${availability} — ${postal}, Svizzera e dintorni.`,
     emailLabel: "E-mail",
     phoneLabel: "Telefono",
     addressLabel: "Indirizzo",

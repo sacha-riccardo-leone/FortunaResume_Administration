@@ -42,10 +42,10 @@ export default function Hero() {
               >
                 <div className="overflow-hidden rounded-lg border border-paper-line bg-paper">
                   <Image
-                    src="/portrait.png"
+                    src="/portrait.jpg"
                     alt={`${identity.firstName} ${identity.lastName}`}
-                    width={448}
-                    height={557}
+                    width={444}
+                    height={562}
                     priority
                     className="block w-full h-auto select-none"
                   />

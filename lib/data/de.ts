@@ -83,7 +83,7 @@ export const de: ResumeData = {
     {
       year: "2018",
       title: "Schulung «Schwierige Kinder»",
-      school: "Betriebsübergreifende Schulung (1 Tag)",
+      school: "Betriebsübergreifende Schulung (1 Tag)",
     },
   ],
   skills: {

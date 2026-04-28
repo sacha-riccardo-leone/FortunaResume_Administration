@@ -83,7 +83,7 @@ export const it: ResumeData = {
     {
       year: "2018",
       title: "Formazione «Bambini difficili»",
-      school: "Formazione interaziendale (1 giornata)",
+      school: "Formazione interaziendale (1 giornata)",
     },
   ],
   skills: {

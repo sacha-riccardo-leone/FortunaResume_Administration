@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLocale } from "./LocaleProvider";
 
@@ -26,14 +27,31 @@ export default function Hero() {
           </motion.div>
 
           <div className="col-span-12 lg:col-span-10">
-            <motion.h1
-              {...reveal(0.2)}
-              className="font-display font-light text-display-xl text-ink"
-            >
-              {identity.firstName}
-              <br />
-              <span className="italic">{identity.lastName}.</span>
-            </motion.h1>
+            <div className="flex items-end justify-between gap-4 sm:gap-6 md:gap-10 lg:gap-14">
+              <motion.h1
+                {...reveal(0.2)}
+                className="font-display font-light text-display-xl text-ink"
+              >
+                {identity.firstName}
+                <br />
+                <span className="italic">{identity.lastName}.</span>
+              </motion.h1>
+              <motion.figure
+                {...reveal(0.35)}
+                className="flex-none w-[110px] sm:w-[150px] md:w-[190px] lg:w-[240px]"
+              >
+                <div className="overflow-hidden rounded-lg border border-paper-line bg-paper">
+                  <Image
+                    src="/portrait.png"
+                    alt={`${identity.firstName} ${identity.lastName}`}
+                    width={448}
+                    height={557}
+                    priority
+                    className="block w-full h-auto select-none"
+                  />
+                </div>
+              </motion.figure>
+            </div>
 
             <motion.div
               {...reveal(0.4)}

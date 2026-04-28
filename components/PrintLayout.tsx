@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLocale } from "./LocaleProvider";
 
 export default function PrintLayout() {
@@ -7,15 +8,26 @@ export default function PrintLayout() {
   const { identity, contact, profile, experience, education, skills, languages, interests } = data;
 
   return (
-    <article className="hidden print:block text-ink bg-paper font-sans text-[8.5pt] leading-[1.4]">
+    <article className="hidden print:block box-border w-[210mm] p-[8mm_12mm] text-ink bg-paper font-sans text-[8.5pt] leading-[1.4]">
       {/* Header */}
-      <header className="pb-[3mm] border-b border-paper-line">
-        <h1 className="font-light tracking-[-0.02em] text-[22pt] leading-[1] text-ink">
-          {identity.firstName} {identity.lastName}
-        </h1>
-        <p className="mt-[1.5mm] text-[9pt] italic text-ink-muted">
-          {identity.tagline}.
-        </p>
+      <header className="pb-[2.5mm] border-b border-paper-line flex items-end justify-between gap-[5mm]">
+        <div className="flex-1 min-w-0">
+          <h1 className="font-light tracking-[-0.02em] text-[22pt] leading-[1] text-ink">
+            {identity.firstName} {identity.lastName}
+          </h1>
+          <p className="mt-[1.5mm] text-[9pt] italic text-ink-muted">
+            {identity.tagline}.
+          </p>
+        </div>
+        <div className="relative flex-none w-[22mm] aspect-[10/11] overflow-hidden rounded-[1mm] border border-paper-line bg-paper">
+          <Image
+            src="/portrait.jpg"
+            alt={`${identity.firstName} ${identity.lastName}`}
+            fill
+            sizes="100px"
+            className="object-cover object-[center_80%]"
+          />
+        </div>
       </header>
 
       {/* Contact strip + meta combined into 4-col row */}
@@ -51,7 +63,7 @@ export default function PrintLayout() {
       </section>
 
       {/* Profile */}
-      <section className="mt-[4mm] break-inside-avoid">
+      <section className="mt-[3mm] break-inside-avoid">
         <SectionTitle>{t.print.profileTitle}</SectionTitle>
         <p className="mt-[1.8mm] text-[8.5pt] leading-[1.4] text-ink-soft text-justify">
           {profile}
@@ -59,7 +71,7 @@ export default function PrintLayout() {
       </section>
 
       {/* Experience */}
-      <section className="mt-[4mm]">
+      <section className="mt-[3mm]">
         <SectionTitle>{t.print.experienceTitle}</SectionTitle>
         <div className="mt-[2mm] space-y-[3mm]">
           {experience.map((exp, i) => (
@@ -94,7 +106,7 @@ export default function PrintLayout() {
                 </ul>
                 {"highlight" in exp && exp.highlight ? (
                   <p className="mt-[1.2mm] pl-[2mm] border-l-2 border-ink text-[8pt] italic text-ink-muted leading-[1.35]">
-                    {t.experience.achievement} — {exp.highlight}
+                    {t.experience.achievement} : {exp.highlight}
                   </p>
                 ) : null}
               </div>
@@ -104,7 +116,7 @@ export default function PrintLayout() {
       </section>
 
       {/* Education */}
-      <section className="mt-[4mm] break-inside-avoid">
+      <section className="mt-[3mm] break-inside-avoid">
         <SectionTitle>{t.print.educationTitle}</SectionTitle>
         <ul className="mt-[1.8mm] space-y-[1.2mm]">
           {education.map((e, i) => (
@@ -123,7 +135,7 @@ export default function PrintLayout() {
       </section>
 
       {/* Skills */}
-      <section className="mt-[4mm] break-inside-avoid">
+      <section className="mt-[3mm] break-inside-avoid">
         <SectionTitle>{t.print.skillsTitle}</SectionTitle>
         <dl className="mt-[1.8mm] space-y-[1.2mm]">
           <SkillRow label={t.print.skillsTools} items={skills.tools} />
@@ -133,7 +145,7 @@ export default function PrintLayout() {
       </section>
 
       {/* Languages + Interests */}
-      <section className="mt-[4mm] grid grid-cols-2 gap-[10mm] break-inside-avoid">
+      <section className="mt-[3mm] grid grid-cols-2 gap-[10mm] break-inside-avoid">
         <div>
           <SectionTitle>{t.print.languagesTitle}</SectionTitle>
           <ul className="mt-[1.8mm] space-y-[0.9mm]">

@@ -72,7 +72,10 @@ body {
    ─────────────────────────────────────────────────────────────── */
 @page {
   size: A4;
-  margin: 11mm 12mm;
+  /* Margin handled inside the print article so iOS Safari and desktop
+     browsers render with the exact same content box (iOS otherwise
+     adds its own UA margin on top of @page rules). */
+  margin: 0;
 }
 
 @media print {
@@ -82,6 +85,8 @@ body {
 
   html,
   body {
+    margin: 0;
+    padding: 0;
     background: #ffffff !important;
     color: #0a0a0a !important;
     -webkit-print-color-adjust: exact;

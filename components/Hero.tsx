@@ -38,16 +38,16 @@ export default function Hero() {
               </motion.h1>
               <motion.figure
                 {...reveal(0.35)}
-                className="flex-none w-[110px] sm:w-[150px] md:w-[190px] lg:w-[240px]"
+                className="flex-none w-[130px] sm:w-[170px] md:w-[215px] lg:w-[270px]"
               >
-                <div className="overflow-hidden rounded-lg border border-paper-line bg-paper">
+                <div className="relative aspect-[10/11] overflow-hidden rounded-lg border border-paper-line bg-paper">
                   <Image
                     src="/portrait.jpg"
                     alt={`${identity.firstName} ${identity.lastName}`}
-                    width={444}
-                    height={562}
+                    fill
                     priority
-                    className="block w-full h-auto select-none"
+                    sizes="(max-width: 640px) 130px, (max-width: 768px) 170px, (max-width: 1024px) 215px, 270px"
+                    className="object-cover object-[center_80%] select-none"
                   />
                 </div>
               </motion.figure>

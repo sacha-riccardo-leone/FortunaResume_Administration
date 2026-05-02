@@ -46,6 +46,48 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
     setLocaleState(next);
     document.documentElement.lang = next;
+
+    // Strip tracking query params (e.g. fbclid from Facebook, gclid from
+    // Google Ads, utm_*) so they don't end up in print footers, share
+    // sheets, or address-bar copies.
+    try {
+      const url = new URL(window.location.href);
+      const trackingParams = [
+        "fbclid",
+        "gclid",
+        "msclkid",
+        "mc_cid",
+        "mc_eid",
+        "igshid",
+        "yclid",
+        "_ga",
+        "ref",
+        "ref_src",
+      ];
+      let changed = false;
+      for (const p of trackingParams) {
+        if (url.searchParams.has(p)) {
+          url.searchParams.delete(p);
+          changed = true;
+        }
+      }
+      // Also strip any utm_* parameter
+      Array.from(url.searchParams.keys()).forEach((key) => {
+        if (key.toLowerCase().startsWith("utm_")) {
+          url.searchParams.delete(key);
+          changed = true;
+        }
+      });
+      if (changed) {
+        const cleaned =
+          url.pathname +
+          (url.searchParams.toString() ? `?${url.searchParams.toString()}` : "") +
+          url.hash;
+        window.history.replaceState(window.history.state, "", cleaned);
+      }
+    } catch {
+      // best-effort
+    }
   }, []);
 
   const setLocale = (next: Locale) => {

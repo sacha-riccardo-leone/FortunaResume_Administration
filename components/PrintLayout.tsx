@@ -169,6 +169,11 @@ export default function PrintLayout() {
           </p>
         </div>
       </section>
+
+      {/* URL footer */}
+      <p className="mt-[3mm] text-center font-mono text-[6.5pt] text-ink-faint tracking-wide">
+        https://fortuna-resume-administration.vercel.app/
+      </p>
     </article>
   );
 }

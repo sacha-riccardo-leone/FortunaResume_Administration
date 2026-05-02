@@ -67,7 +67,7 @@ export default function PrintLayout() {
       {/* Profile */}
       <section className="mt-[3mm] break-inside-avoid">
         <SectionTitle>{t.print.profileTitle}</SectionTitle>
-        <p className="mt-[1.8mm] text-[8.5pt] leading-[1.4] text-ink-soft text-justify hyphens-auto">
+        <p className="mt-[1.8mm] text-[8.5pt] leading-[1.4] text-ink-soft text-justify">
           {profile}
         </p>
       </section>
@@ -107,7 +107,7 @@ export default function PrintLayout() {
                   ))}
                 </ul>
                 {"highlight" in exp && exp.highlight ? (
-                  <p className="mt-[1.2mm] pl-[2mm] border-l-2 border-ink text-[8pt] italic text-ink-muted leading-[1.35] text-justify hyphens-auto">
+                  <p className="mt-[1.2mm] pl-[2mm] border-l-2 border-ink text-[8pt] italic text-ink-muted leading-[1.35] text-justify">
                     {t.experience.achievement} : {exp.highlight}
                   </p>
                 ) : null}

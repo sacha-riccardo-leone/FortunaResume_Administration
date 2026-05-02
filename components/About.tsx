@@ -21,7 +21,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="col-span-12 md:col-span-8 text-lg leading-[1.8] text-ink-soft md:text-justify"
+          className="col-span-12 md:col-span-8 text-lg leading-[1.8] text-ink-soft text-justify"
         >
           {profile}
         </motion.p>

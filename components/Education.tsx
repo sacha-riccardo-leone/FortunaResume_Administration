@@ -28,17 +28,6 @@ export default function Education() {
           </motion.li>
         ))}
       </ul>
-
-      <div className="mt-10 flex flex-wrap gap-3">
-        {data.interests.map((i) => (
-          <span
-            key={i}
-            className="text-xs px-3 py-1.5 rounded-full border border-ink/20 text-ink-muted"
-          >
-            {i}
-          </span>
-        ))}
-      </div>
     </Section>
   );
 }

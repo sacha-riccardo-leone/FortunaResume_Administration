@@ -6,7 +6,7 @@ import { useLocale } from "./LocaleProvider";
 
 export default function About() {
   const { data, t } = useLocale();
-  const { profile, identity } = data;
+  const { profile, identity, interests } = data;
   const facts = [
     { label: t.about.bornOn, value: identity.birth },
     { label: t.about.nationality, value: identity.nationality },
@@ -39,6 +39,14 @@ export default function About() {
                 <dd className="text-sm text-ink font-medium">{f.value}</dd>
               </div>
             ))}
+            <div className="pt-4 [&>dd+dd]:mt-2">
+              <dt className="text-eyebrow uppercase text-ink-faint mb-3">{t.about.interests}</dt>
+              {interests.map((i) => (
+                <dd key={i} className="text-sm text-ink font-medium leading-snug">
+                  {i}
+                </dd>
+              ))}
+            </div>
           </dl>
         </motion.div>
       </div>

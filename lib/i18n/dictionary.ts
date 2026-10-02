@@ -26,6 +26,7 @@ export type UIDictionary = {
     eyebrow: string;
     bornOn: string;
     nationality: string;
+    interests: string;
   };
   experience: {
     eyebrow: string;
@@ -106,6 +107,7 @@ const fr: UIDictionary = {
     eyebrow: "Description",
     bornOn: "Née le",
     nationality: "Nationalité",
+    interests: "Centres d’intérêt",
   },
   experience: {
     eyebrow: "Expérience professionnelle",
@@ -188,6 +190,7 @@ const en: UIDictionary = {
     eyebrow: "Description",
     bornOn: "Born on",
     nationality: "Nationality",
+    interests: "Interests",
   },
   experience: {
     eyebrow: "Professional experience",
@@ -270,6 +273,7 @@ const de: UIDictionary = {
     eyebrow: "Beschreibung",
     bornOn: "Geboren am",
     nationality: "Nationalität",
+    interests: "Interessen",
   },
   experience: {
     eyebrow: "Berufserfahrung",
@@ -352,6 +356,7 @@ const it: UIDictionary = {
     eyebrow: "Descrizione",
     bornOn: "Nata il",
     nationality: "Nazionalità",
+    interests: "Interessi",
   },
   experience: {
     eyebrow: "Esperienza professionale",

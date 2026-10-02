@@ -26,7 +26,7 @@ export const it: ResumeData = {
     linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
-    "Collaboratrice versatile con una solida esperienza nelle relazioni con i clienti, nel rigoroso rispetto delle procedure e nel coordinamento del team. Rigorosa, organizzata e a proprio agio con gli strumenti d’ufficio (Microsoft Office, Adobe), gestisco contemporaneamente più compiti in ambienti esigenti. Cerco un posto amministrativo in cui mettere a frutto il mio senso del servizio, la mia discrezione e il mio gusto per il lavoro preciso e strutturato.",
+    "Collaboratrice versatile con una solida esperienza nelle relazioni con i clienti, nel rigoroso rispetto delle procedure e nel coordinamento del team. Rigorosa, organizzata e a proprio agio con gli strumenti d’ufficio, gestisco contemporaneamente più compiti in ambienti esigenti. Cerco un posto amministrativo in cui mettere a frutto il mio senso del servizio, la mia discrezione e il mio gusto per il lavoro preciso e strutturato.",
   experience: [
     {
       period: "In corso",

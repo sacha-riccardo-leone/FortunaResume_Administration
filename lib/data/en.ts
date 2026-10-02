@@ -26,7 +26,7 @@ export const en: ResumeData = {
     linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
-    "Versatile employee with solid experience in client relations, strict adherence to procedures, and team coordination. Diligent, organized, and comfortable with office tools (Microsoft Office, Adobe), I manage multiple tasks simultaneously in demanding environments. I am looking for an administrative position where I can apply my sense of service, my discretion, and my passion for precise, structured work.",
+    "Versatile employee with solid experience in client relations, strict adherence to procedures, and team coordination. Diligent, organized, and comfortable with office tools, I manage multiple tasks simultaneously in demanding environments. I am looking for an administrative position where I can apply my sense of service, my discretion, and my passion for precise, structured work.",
   experience: [
     {
       period: "Current",

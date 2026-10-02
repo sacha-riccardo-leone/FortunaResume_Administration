@@ -26,7 +26,7 @@ export const fr: ResumeData = {
     linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
-    "Collaboratrice polyvalente avec une solide expérience de la relation client, du respect strict des procédures et de la coordination d’équipe. Rigoureuse, organisée et à l’aise avec les outils bureautiques (Microsoft Office, Adobe), je gère simultanément plusieurs tâches dans des environnements exigeants. Je recherche un poste administratif dans lequel mettre à profit mon sens du service, ma discrétion et mon goût pour le travail précis et structuré.",
+    "Collaboratrice polyvalente avec une solide expérience de la relation client, du respect strict des procédures et de la coordination d’équipe. Rigoureuse, organisée et à l’aise avec les outils bureautiques, je gère simultanément plusieurs tâches dans des environnements exigeants. Je recherche un poste administratif dans lequel mettre à profit mon sens du service, ma discrétion et mon goût pour le travail précis et structuré.",
   experience: [
     {
       period: "En cours",

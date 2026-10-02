@@ -10,7 +10,6 @@ export default function About() {
   const facts = [
     { label: t.about.bornOn, value: identity.birth },
     { label: t.about.nationality, value: identity.nationality },
-    { label: t.about.availability, value: identity.availability },
   ];
 
   return (

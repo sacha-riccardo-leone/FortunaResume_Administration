@@ -4,6 +4,14 @@ import { motion } from "framer-motion";
 import Section from "./Section";
 import { useLocale } from "./LocaleProvider";
 
+// Hover colours sampled from each app's icon (its lettered tile).
+const TOOL_HOVER: Record<string, string> = {
+  "Microsoft Word": "hover:border-[#1A43B6] hover:bg-[#1A43B6]",
+  "Microsoft Excel": "hover:border-[#167645] hover:bg-[#167645]",
+  "Microsoft Outlook": "hover:border-[#1063D0] hover:bg-[#1063D0]",
+  "Microsoft PowerPoint": "hover:border-[#BF152D] hover:bg-[#BF152D]",
+};
+
 export default function Skills() {
   const { data, t } = useLocale();
   const { skills, languages } = data;
@@ -28,7 +36,9 @@ export default function Skills() {
               {skills.tools.map((s) => (
                 <span
                   key={s}
-                  className="inline-flex items-center rounded-full border border-paper-line px-4 py-1.5 text-sm text-ink-soft bg-paper hover:border-ink hover:bg-ink hover:text-paper transition-colors duration-300"
+                  className={`inline-flex items-center rounded-full border border-paper-line px-4 py-1.5 text-sm text-ink-soft bg-paper hover:text-paper transition-colors duration-300 ${
+                    TOOL_HOVER[s] ?? "hover:border-ink hover:bg-ink"
+                  }`}
                 >
                   {s}
                 </span>

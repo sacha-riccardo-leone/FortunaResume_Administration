@@ -26,7 +26,7 @@ export const de: ResumeData = {
     linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
-    "Vielseitige Mitarbeiterin mit fundierter Erfahrung im Kundenkontakt, in der strikten Einhaltung von Verfahren und in der Teamkoordination. Sorgfältig, organisiert und vertraut mit Office-Tools (Microsoft Office, Adobe), bewältige ich mehrere Aufgaben gleichzeitig in anspruchsvollen Umgebungen. Ich suche eine Verwaltungsstelle, in der ich meinen Sinn für Dienstleistung, meine Diskretion und meine Vorliebe für präzise und strukturierte Arbeit einbringen kann.",
+    "Vielseitige Mitarbeiterin mit fundierter Erfahrung im Kundenkontakt, in der strikten Einhaltung von Verfahren und in der Teamkoordination. Sorgfältig, organisiert und vertraut mit Office-Tools, bewältige ich mehrere Aufgaben gleichzeitig in anspruchsvollen Umgebungen. Ich suche eine Verwaltungsstelle, in der ich meinen Sinn für Dienstleistung, meine Diskretion und meine Vorliebe für präzise und strukturierte Arbeit einbringen kann.",
   experience: [
     {
       period: "Aktuell",

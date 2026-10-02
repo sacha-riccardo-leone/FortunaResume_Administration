@@ -12,8 +12,9 @@ const reveal = (delay = 0) => ({
 
 export default function Hero() {
   const { data, t } = useLocale();
-  const { identity, contact } = data;
-  const city = contact.postal.split(" ").slice(1).join(" ");
+  const { identity, contact, languages } = data;
+  // Split around the availability so "80 – 100 %" can be kept on one line.
+  const [seekingLead, seekingTail] = t.hero.seeking("\u0000", identity.start).split("\u0000");
 
   return (
     <section id="top" className="relative min-h-[100svh] flex items-center pt-28 sm:pt-32 pb-20 sm:pb-24">
@@ -58,15 +59,37 @@ export default function Hero() {
               className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-end"
             >
               <div className="md:col-span-7 max-w-xl">
-                <p className="text-ink-muted text-lg leading-relaxed">
+                <p className="font-display text-2xl md:text-3xl text-ink leading-tight">
+                  {identity.role}
+                </p>
+                <p className="mt-2 text-ink-muted text-lg leading-relaxed">
                   {identity.tagline}.
                 </p>
-                <p className="mt-3 text-sm text-ink-subtle">
-                  {t.hero.locatedIn(city, identity.availability)}
+                <p className="mt-6 flex gap-3 text-ink leading-relaxed">
+                  <span
+                    className="mt-[0.6em] h-1.5 w-1.5 flex-none rounded-full bg-ink ring-4 ring-ink/10"
+                    aria-hidden
+                  />
+                  <span>
+                    {seekingLead}
+                    <span className="whitespace-nowrap">{identity.availability}</span>
+                    {seekingTail}
+                  </span>
                 </p>
+                <ul aria-label={t.skills.languages} className="mt-5 flex flex-wrap gap-2">
+                  {languages.map((l) => (
+                    <li
+                      key={l.name}
+                      className="rounded-full border border-paper-line px-3 py-1 text-xs text-ink-muted"
+                    >
+                      {/* "B1 — Intermédiaire" → "B1" */}
+                      <span className="text-ink">{l.name}</span> · {l.level.split(" — ")[0]}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-              <div className="md:col-span-5 md:text-right grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4 md:gap-2 text-sm">
+              <div className="md:col-span-5 md:text-right grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:gap-2 text-sm">
                 <div className="border-t border-paper-line pt-3">
                   <div className="text-eyebrow uppercase text-ink-faint mb-1">{t.hero.locationLabel}</div>
                   <div>{contact.postal}</div>
@@ -81,6 +104,17 @@ export default function Hero() {
                   <div className="text-eyebrow uppercase text-ink-faint mb-1">{t.hero.emailLabel}</div>
                   <a href={`mailto:${contact.email}`} className="link-reveal break-all">
                     {contact.email}
+                  </a>
+                </div>
+                <div className="border-t border-paper-line pt-3">
+                  <div className="text-eyebrow uppercase text-ink-faint mb-1">LinkedIn</div>
+                  <a
+                    href={contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-reveal"
+                  >
+                    {t.hero.linkedinCta} <span aria-hidden>↗</span>
                   </a>
                 </div>
               </div>

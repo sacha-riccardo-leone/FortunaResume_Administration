@@ -1,11 +1,14 @@
 export type ExperienceEntry = {
   period: string;
+  current?: boolean;
   role: string;
   company: string;
+  url?: string;
   via?: string;
   location: string;
   bullets: string[];
-  highlight: string;
+  highlight?: string;
+  tools?: string[];
 };
 
 export type EducationEntry = {
@@ -18,6 +21,11 @@ export type LanguageEntry = {
   name: string;
   level: string;
   score: number;
+};
+
+export type SkillEntry = {
+  name: string;
+  example?: string;
 };
 
 export type ResumeData = {
@@ -33,6 +41,7 @@ export type ResumeData = {
     birth: string;
     nationality: string;
     availability: string;
+    start: string;
   };
   contact: {
     email: string;
@@ -41,14 +50,15 @@ export type ResumeData = {
     address: string;
     postal: string;
     country: string;
+    linkedin: string;
   };
   profile: string;
   experience: ExperienceEntry[];
   education: EducationEntry[];
   skills: {
     tools: string[];
-    admin: string[];
-    human: string[];
+    admin: SkillEntry[];
+    human: SkillEntry[];
   };
   languages: LanguageEntry[];
   interests: string[];

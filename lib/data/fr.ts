@@ -14,6 +14,7 @@ export const fr: ResumeData = {
     birth: "05.09.1997",
     nationality: "Suisse",
     availability: "80 – 100 %",
+    start: "à convenir",
   },
   contact: {
     email: "chungfortuna@gmail.com",
@@ -22,14 +23,26 @@ export const fr: ResumeData = {
     address: "Rue de la Charrière 89",
     postal: "2300 La Chaux-de-Fonds",
     country: "Suisse",
+    linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
     "Collaboratrice polyvalente avec une solide expérience de la relation client, du respect strict des procédures et de la coordination d’équipe. Rigoureuse, organisée et à l’aise avec les outils bureautiques (Microsoft Office, Adobe), je gère simultanément plusieurs tâches dans des environnements exigeants. Je recherche un poste administratif dans lequel mettre à profit mon sens du service, ma discrétion et mon goût pour le travail précis et structuré.",
   experience: [
     {
+      period: "En cours",
+      current: true,
+      role: "Assistante administrative",
+      company: "Association Elan",
+      url: "https://elan-ne.ch/",
+      location: "La Chaux-de-Fonds",
+      bullets: [],
+      tools: ["Word", "Excel", "Outlook", "Google Agenda"],
+    },
+    {
       period: "2022 — 2023",
       role: "Opératrice en horlogerie",
       company: "Rolex SA",
+      url: "https://www.rolex.com/",
       via: "via Interima / Flexsis SA",
       location: "Bienne",
       bullets: [
@@ -45,6 +58,7 @@ export const fr: ResumeData = {
       period: "2016 — 2019",
       role: "Assistante socio-éducative (apprentissage CFC)",
       company: "Association L’Accueil",
+      url: "https://www.laccueilparascolaire.ch/",
       location: "Saint-Blaise",
       bullets: [
         "Accueil, prise en charge et accompagnement d’enfants et de leurs familles.",
@@ -58,7 +72,8 @@ export const fr: ResumeData = {
     {
       period: "2015 — 2016",
       role: "Vendeuse",
-      company: "Aux Coq-d’Or",
+      company: "Au Coq d’Or",
+      url: "https://www.facebook.com/AuCoqdOrLaChauxDeFonds/",
       location: "La Chaux-de-Fonds",
       bullets: [
         "Accueil, conseil clientèle et encaissement (gestion de caisse quotidienne).",
@@ -93,22 +108,29 @@ export const fr: ResumeData = {
       "Microsoft Outlook",
       "Microsoft PowerPoint",
       "Adobe Creative Suite",
+      "Google Agenda",
     ],
     admin: [
-      "Accueil téléphonique & physique",
-      "Relation client",
-      "Encaissement & caisse",
-      "Rédaction & mise en forme",
-      "Classement & archivage",
-      "Confidentialité des données",
+      {
+        name: "Accueil téléphonique & physique",
+        example: "Accueil des familles et de la clientèle — L’Accueil, Au Coq d’Or",
+      },
+      { name: "Relation client", example: "Conseil à la clientèle — Au Coq d’Or" },
+      { name: "Encaissement & caisse", example: "Gestion de caisse quotidienne — Au Coq d’Or" },
+      {
+        name: "Rédaction & mise en forme",
+        example: "Comptes rendus et supports pédagogiques — L’Accueil",
+      },
+      { name: "Classement & archivage" },
+      { name: "Confidentialité des données" },
     ],
     human: [
-      "Organisation",
-      "Gestion des priorités",
-      "Coordination d’équipe",
-      "Discrétion",
-      "Adaptabilité",
-      "Sens du service",
+      { name: "Organisation", example: "Planification d’activités — L’Accueil" },
+      { name: "Gestion des priorités", example: "Production à forte cadence — Rolex" },
+      { name: "Coordination d’équipe", example: "Coordination quotidienne avec l’équipe — Rolex" },
+      { name: "Discrétion" },
+      { name: "Adaptabilité", example: "Périodes de forte affluence — Au Coq d’Or" },
+      { name: "Sens du service" },
     ],
   },
   languages: [

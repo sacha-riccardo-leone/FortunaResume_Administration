@@ -47,6 +47,15 @@ export default function Contact() {
         >
           {t.contact.pitch(identity.availability, contact.postal)}
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mt-3 max-w-2xl text-sm text-paper/50 leading-relaxed"
+        >
+          {t.contact.references}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -85,7 +94,7 @@ export default function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mt-20"
+          className="mt-20 flex flex-wrap gap-4"
         >
           <a
             href={`mailto:${contact.email}`}
@@ -93,6 +102,20 @@ export default function Contact() {
           >
             <span className="font-display text-lg">{t.contact.cta}</span>
             <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
+          </a>
+          <a
+            href={contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-4 rounded-full border border-paper/30 px-6 py-4 text-paper/80 hover:border-paper hover:text-paper transition-colors duration-500"
+          >
+            <span className="font-display text-lg">LinkedIn</span>
+            <span
+              className="transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              aria-hidden
+            >
+              ↗
+            </span>
           </a>
         </motion.div>
       </div>

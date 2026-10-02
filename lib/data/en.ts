@@ -14,6 +14,7 @@ export const en: ResumeData = {
     birth: "05.09.1997",
     nationality: "Swiss",
     availability: "80 – 100 %",
+    start: "to be agreed",
   },
   contact: {
     email: "chungfortuna@gmail.com",
@@ -22,14 +23,26 @@ export const en: ResumeData = {
     address: "Rue de la Charrière 89",
     postal: "2300 La Chaux-de-Fonds",
     country: "Switzerland",
+    linkedin: "https://www.linkedin.com/in/fortuna-chung-ming-kan-253414335/",
   },
   profile:
     "Versatile employee with solid experience in client relations, strict adherence to procedures, and team coordination. Diligent, organized, and comfortable with office tools (Microsoft Office, Adobe), I manage multiple tasks simultaneously in demanding environments. I am looking for an administrative position where I can apply my sense of service, my discretion, and my passion for precise, structured work.",
   experience: [
     {
+      period: "Current",
+      current: true,
+      role: "Administrative assistant",
+      company: "Association Elan",
+      url: "https://elan-ne.ch/",
+      location: "La Chaux-de-Fonds",
+      bullets: [],
+      tools: ["Word", "Excel", "Outlook", "Google Calendar"],
+    },
+    {
       period: "2022 — 2023",
       role: "Watchmaking operator",
       company: "Rolex SA",
+      url: "https://www.rolex.com/",
       via: "via Interima / Flexsis SA",
       location: "Biel",
       bullets: [
@@ -45,6 +58,7 @@ export const en: ResumeData = {
       period: "2016 — 2019",
       role: "Socio-educational assistant (CFC apprenticeship)",
       company: "Association L’Accueil",
+      url: "https://www.laccueilparascolaire.ch/",
       location: "Saint-Blaise",
       bullets: [
         "Welcoming, supporting, and accompanying children and their families.",
@@ -58,7 +72,8 @@ export const en: ResumeData = {
     {
       period: "2015 — 2016",
       role: "Sales assistant",
-      company: "Aux Coq-d’Or",
+      company: "Au Coq d’Or",
+      url: "https://www.facebook.com/AuCoqdOrLaChauxDeFonds/",
       location: "La Chaux-de-Fonds",
       bullets: [
         "Welcoming, client advice, and checkout (daily cash handling).",
@@ -93,22 +108,29 @@ export const en: ResumeData = {
       "Microsoft Outlook",
       "Microsoft PowerPoint",
       "Adobe Creative Suite",
+      "Google Calendar",
     ],
     admin: [
-      "Phone & in-person reception",
-      "Client relations",
-      "Checkout & cash handling",
-      "Drafting & formatting",
-      "Filing & archiving",
-      "Data confidentiality",
+      {
+        name: "Phone & in-person reception",
+        example: "Welcoming families and customers — L’Accueil, Au Coq d’Or",
+      },
+      { name: "Client relations", example: "Client advice — Au Coq d’Or" },
+      { name: "Checkout & cash handling", example: "Daily cash handling — Au Coq d’Or" },
+      {
+        name: "Drafting & formatting",
+        example: "Written reports and educational materials — L’Accueil",
+      },
+      { name: "Filing & archiving" },
+      { name: "Data confidentiality" },
     ],
     human: [
-      "Organization",
-      "Priority management",
-      "Team coordination",
-      "Discretion",
-      "Adaptability",
-      "Service-mindedness",
+      { name: "Organization", example: "Activity planning — L’Accueil" },
+      { name: "Priority management", example: "High-paced production — Rolex" },
+      { name: "Team coordination", example: "Daily coordination with the team — Rolex" },
+      { name: "Discretion" },
+      { name: "Adaptability", example: "Peak periods — Au Coq d’Or" },
+      { name: "Service-mindedness" },
     ],
   },
   languages: [

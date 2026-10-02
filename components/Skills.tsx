@@ -7,8 +7,8 @@ import { useLocale } from "./LocaleProvider";
 export default function Skills() {
   const { data, t } = useLocale();
   const { skills, languages } = data;
+  // Each admin / personal skill can carry an example from her jobs as proof.
   const groups = [
-    { title: t.skills.tools, items: skills.tools },
     { title: t.skills.admin, items: skills.admin },
     { title: t.skills.human, items: skills.human },
   ];
@@ -17,25 +17,44 @@ export default function Skills() {
     <Section id="competences" index="04" eyebrow={t.skills.eyebrow}>
       <div className="grid grid-cols-12 gap-y-10 md:gap-10">
         <div className="col-span-12 md:col-span-8 space-y-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-eyebrow uppercase text-ink-faint mb-4">{t.skills.tools}</h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.tools.map((s) => (
+                <span
+                  key={s}
+                  className="inline-flex items-center rounded-full border border-paper-line px-4 py-1.5 text-sm text-ink-soft bg-paper hover:border-ink hover:bg-ink hover:text-paper transition-colors duration-300"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
           {groups.map((g, gi) => (
             <motion.div
               key={g.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: gi * 0.08 }}
+              transition={{ duration: 0.6, delay: (gi + 1) * 0.08 }}
             >
               <h3 className="text-eyebrow uppercase text-ink-faint mb-4">{g.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {g.items.map((s) => (
-                  <span
-                    key={s}
-                    className="inline-flex items-center rounded-full border border-paper-line px-4 py-1.5 text-sm text-ink-soft bg-paper hover:border-ink hover:bg-ink hover:text-paper transition-colors duration-300"
-                  >
-                    {s}
-                  </span>
+                  <li key={s.name} className="border-t border-paper-line py-3">
+                    <div className="text-[15px] text-ink">{s.name}</div>
+                    {s.example ? (
+                      <div className="mt-1 text-xs leading-relaxed text-ink-subtle">{s.example}</div>
+                    ) : null}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>

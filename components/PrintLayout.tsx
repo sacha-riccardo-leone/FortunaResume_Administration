@@ -15,7 +15,8 @@ export default function PrintLayout() {
           <h1 className="font-light tracking-[-0.02em] text-[22pt] leading-[1] text-ink">
             {identity.firstName} {identity.lastName}
           </h1>
-          <p className="mt-[1.5mm] text-[9pt] italic text-ink-muted">
+          <p className="mt-[1.5mm] text-[11pt] leading-[1.2] text-ink">{identity.role}</p>
+          <p className="mt-[1mm] text-[9pt] italic text-ink-muted">
             {identity.tagline}.
           </p>
         </div>
@@ -32,8 +33,8 @@ export default function PrintLayout() {
         </div>
       </header>
 
-      {/* Contact strip + meta combined into 4-col row */}
-      <section className="mt-[3mm] grid grid-cols-4 gap-[5mm]">
+      {/* Contact strip + meta combined into 5-col row */}
+      <section className="mt-[3mm] grid grid-cols-[1.15fr_0.75fr_1.15fr_1fr_1fr] gap-[4mm]">
         <div>
           <div className="uppercase tracking-[0.18em] text-[6.4pt] text-ink-faint">
             {t.print.contactEmail}
@@ -45,6 +46,15 @@ export default function PrintLayout() {
             {t.print.contactPhone}
           </div>
           <div className="mt-[0.6mm] text-[8.2pt] text-ink">{contact.phoneFormatted}</div>
+        </div>
+        <div>
+          <div className="uppercase tracking-[0.18em] text-[6.4pt] text-ink-faint">LinkedIn</div>
+          <a
+            href={contact.linkedin}
+            className="mt-[0.6mm] block text-[8.2pt] text-ink leading-[1.3] [overflow-wrap:anywhere]"
+          >
+            {contact.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
+          </a>
         </div>
         <div>
           <div className="uppercase tracking-[0.18em] text-[6.4pt] text-ink-faint">
@@ -59,7 +69,8 @@ export default function PrintLayout() {
             {t.about.bornOn}
           </div>
           <div className="mt-[0.6mm] text-[8.2pt] text-ink leading-[1.3]">
-            {identity.birth} · {identity.nationality} · {identity.availability}
+            {identity.birth} · {identity.nationality} ·{" "}
+            <span className="whitespace-nowrap">{identity.availability}</span>
           </div>
         </div>
       </section>
@@ -75,7 +86,7 @@ export default function PrintLayout() {
       {/* Experience */}
       <section className="mt-[3mm]">
         <SectionTitle>{t.print.experienceTitle}</SectionTitle>
-        <div className="mt-[2mm] space-y-[3mm]">
+        <div className="mt-[2mm] space-y-[2.5mm]">
           {experience.map((exp, i) => (
             <div
               key={i}
@@ -90,25 +101,35 @@ export default function PrintLayout() {
                   {exp.role}
                 </h3>
                 <p className="mt-[0.4mm] text-[8pt] text-ink-muted">
-                  {exp.company}
+                  {exp.url ? <a href={exp.url}>{exp.company}</a> : exp.company}
                   {"via" in exp && exp.via ? (
                     <span className="text-ink-faint"> · {exp.via}</span>
                   ) : null}
                 </p>
-                <ul className="mt-[1.2mm] space-y-[0.5mm]">
-                  {exp.bullets.map((b, bi) => (
-                    <li key={bi} className="flex text-[8.3pt] leading-[1.4] text-ink-soft">
-                      <span
-                        className="mr-[1.8mm] mt-[0.7em] h-px w-[2mm] flex-none bg-ink-faint"
-                        aria-hidden
-                      />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
+                {exp.bullets.length ? (
+                  <ul className="mt-[1.2mm] space-y-[0.5mm]">
+                    {exp.bullets.map((b, bi) => (
+                      <li key={bi} className="flex text-[8.3pt] leading-[1.4] text-ink-soft">
+                        <span
+                          className="mr-[1.8mm] mt-[0.7em] h-px w-[2mm] flex-none bg-ink-faint"
+                          aria-hidden
+                        />
+                        <span>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
                 {"highlight" in exp && exp.highlight ? (
                   <p className="mt-[1.2mm] pl-[2mm] border-l-2 border-ink text-[8pt] italic text-ink-muted leading-[1.35] text-justify">
                     {t.experience.achievement} : {exp.highlight}
+                  </p>
+                ) : null}
+                {exp.tools?.length ? (
+                  <p className="mt-[1mm] text-[7.8pt] text-ink-muted">
+                    <span className="uppercase tracking-[0.14em] text-[6.4pt] text-ink-faint mr-[1.5mm]">
+                      {t.experience.tools}
+                    </span>
+                    {exp.tools.join(" · ")}
                   </p>
                 ) : null}
               </div>
@@ -141,13 +162,13 @@ export default function PrintLayout() {
         <SectionTitle>{t.print.skillsTitle}</SectionTitle>
         <dl className="mt-[1.8mm] space-y-[1.2mm]">
           <SkillRow label={t.print.skillsTools} items={skills.tools} />
-          <SkillRow label={t.print.skillsAdmin} items={skills.admin} />
-          <SkillRow label={t.print.skillsHuman} items={skills.human} />
+          <SkillRow label={t.print.skillsAdmin} items={skills.admin.map((s) => s.name)} />
+          <SkillRow label={t.print.skillsHuman} items={skills.human.map((s) => s.name)} />
         </dl>
       </section>
 
-      {/* Languages + Interests */}
-      <section className="mt-[3mm] grid grid-cols-2 gap-[10mm] break-inside-avoid">
+      {/* Languages + Interests + References */}
+      <section className="mt-[3mm] grid grid-cols-3 gap-[8mm] break-inside-avoid">
         <div>
           <SectionTitle>{t.print.languagesTitle}</SectionTitle>
           <ul className="mt-[1.8mm] space-y-[0.9mm]">
@@ -166,6 +187,12 @@ export default function PrintLayout() {
           <SectionTitle>{t.print.interestsTitle}</SectionTitle>
           <p className="mt-[1.8mm] text-[8.3pt] text-ink-soft leading-[1.4]">
             {interests.join(" · ")}
+          </p>
+        </div>
+        <div>
+          <SectionTitle>{t.print.referencesTitle}</SectionTitle>
+          <p className="mt-[1.8mm] text-[8.3pt] text-ink-soft leading-[1.4]">
+            {t.contact.references}
           </p>
         </div>
       </section>

@@ -19,7 +19,8 @@ export type UIDictionary = {
     locationLabel: string;
     phoneLabel: string;
     emailLabel: string;
-    locatedIn: (city: string, availability: string) => string;
+    seeking: (availability: string, start: string) => string;
+    linkedinCta: string;
   };
   about: {
     eyebrow: string;
@@ -30,6 +31,7 @@ export type UIDictionary = {
   experience: {
     eyebrow: string;
     achievement: string;
+    tools: string;
   };
   skills: {
     eyebrow: string;
@@ -50,6 +52,7 @@ export type UIDictionary = {
     phoneLabel: string;
     addressLabel: string;
     cta: string;
+    references: string;
   };
   footer: {
     rights: string;
@@ -73,6 +76,7 @@ export type UIDictionary = {
     skillsHuman: string;
     languagesTitle: string;
     interestsTitle: string;
+    referencesTitle: string;
   };
 };
 
@@ -95,8 +99,9 @@ const fr: UIDictionary = {
     locationLabel: "Lieu",
     phoneLabel: "Téléphone",
     emailLabel: "E-mail",
-    locatedIn: (city, availability) =>
-      `Basée à ${city}, disponible ${availability}.`,
+    seeking: (availability, start) =>
+      `À la recherche d’un poste administratif à ${availability} — entrée en fonction ${start}.`,
+    linkedinCta: "Voir le profil",
   },
   about: {
     eyebrow: "Description",
@@ -107,6 +112,7 @@ const fr: UIDictionary = {
   experience: {
     eyebrow: "Expérience professionnelle",
     achievement: "Réalisation",
+    tools: "Outils",
   },
   skills: {
     eyebrow: "Compétences / Savoir faire, savoir être",
@@ -128,6 +134,7 @@ const fr: UIDictionary = {
     phoneLabel: "Téléphone",
     addressLabel: "Adresse",
     cta: "Envoyer un message",
+    references: "Certificats de travail et références sur demande.",
   },
   footer: {
     rights: "Tous droits réservés.",
@@ -152,6 +159,7 @@ const fr: UIDictionary = {
     skillsHuman: "Personnelles",
     languagesTitle: "Langues",
     interestsTitle: "Intérêts",
+    referencesTitle: "Références",
   },
 };
 
@@ -174,8 +182,9 @@ const en: UIDictionary = {
     locationLabel: "Location",
     phoneLabel: "Phone",
     emailLabel: "Email",
-    locatedIn: (city, availability) =>
-      `Based in ${city}, available ${availability}.`,
+    seeking: (availability, start) =>
+      `Looking for an administrative position at ${availability} — start date ${start}.`,
+    linkedinCta: "View profile",
   },
   about: {
     eyebrow: "Description",
@@ -186,6 +195,7 @@ const en: UIDictionary = {
   experience: {
     eyebrow: "Professional experience",
     achievement: "Achievement",
+    tools: "Tools",
   },
   skills: {
     eyebrow: "Skills / Know-how & soft skills",
@@ -207,6 +217,7 @@ const en: UIDictionary = {
     phoneLabel: "Phone",
     addressLabel: "Address",
     cta: "Send a message",
+    references: "Work certificates and references available on request.",
   },
   footer: {
     rights: "All rights reserved.",
@@ -231,6 +242,7 @@ const en: UIDictionary = {
     skillsHuman: "Personal",
     languagesTitle: "Languages",
     interestsTitle: "Interests",
+    referencesTitle: "References",
   },
 };
 
@@ -253,8 +265,9 @@ const de: UIDictionary = {
     locationLabel: "Ort",
     phoneLabel: "Telefon",
     emailLabel: "E-Mail",
-    locatedIn: (city, availability) =>
-      `Mit Sitz in ${city}, verfügbar ${availability}.`,
+    seeking: (availability, start) =>
+      `Auf der Suche nach einer Verwaltungsstelle zu ${availability} — Eintritt ${start}.`,
+    linkedinCta: "Profil ansehen",
   },
   about: {
     eyebrow: "Beschreibung",
@@ -265,6 +278,7 @@ const de: UIDictionary = {
   experience: {
     eyebrow: "Berufserfahrung",
     achievement: "Erfolg",
+    tools: "Tools",
   },
   skills: {
     eyebrow: "Kompetenzen / Fach- und Sozialkompetenzen",
@@ -286,6 +300,7 @@ const de: UIDictionary = {
     phoneLabel: "Telefon",
     addressLabel: "Adresse",
     cta: "Nachricht senden",
+    references: "Arbeitszeugnisse und Referenzen auf Anfrage.",
   },
   footer: {
     rights: "Alle Rechte vorbehalten.",
@@ -310,6 +325,7 @@ const de: UIDictionary = {
     skillsHuman: "Persönlich",
     languagesTitle: "Sprachen",
     interestsTitle: "Interessen",
+    referencesTitle: "Referenzen",
   },
 };
 
@@ -332,8 +348,9 @@ const it: UIDictionary = {
     locationLabel: "Luogo",
     phoneLabel: "Telefono",
     emailLabel: "E-mail",
-    locatedIn: (city, availability) =>
-      `Con sede a ${city}, disponibile ${availability}.`,
+    seeking: (availability, start) =>
+      `Alla ricerca di un posto amministrativo (${availability}) — entrata in servizio ${start}.`,
+    linkedinCta: "Vedi il profilo",
   },
   about: {
     eyebrow: "Descrizione",
@@ -344,6 +361,7 @@ const it: UIDictionary = {
   experience: {
     eyebrow: "Esperienza professionale",
     achievement: "Realizzazione",
+    tools: "Strumenti",
   },
   skills: {
     eyebrow: "Competenze / Know-how e attitudini",
@@ -365,6 +383,7 @@ const it: UIDictionary = {
     phoneLabel: "Telefono",
     addressLabel: "Indirizzo",
     cta: "Invia un messaggio",
+    references: "Certificati di lavoro e referenze su richiesta.",
   },
   footer: {
     rights: "Tutti i diritti riservati.",
@@ -389,6 +408,7 @@ const it: UIDictionary = {
     skillsHuman: "Personali",
     languagesTitle: "Lingue",
     interestsTitle: "Interessi",
+    referencesTitle: "Referenze",
   },
 };
 

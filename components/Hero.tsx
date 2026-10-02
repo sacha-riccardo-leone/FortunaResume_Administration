@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLocale } from "./LocaleProvider";
+import StatusDot from "./StatusDot";
 
 const reveal = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -66,10 +67,7 @@ export default function Hero() {
                   {identity.tagline}.
                 </p>
                 <p className="mt-6 flex gap-3 text-ink leading-relaxed">
-                  <span
-                    className="mt-[0.6em] h-1.5 w-1.5 flex-none rounded-full bg-ink ring-4 ring-ink/10"
-                    aria-hidden
-                  />
+                  <StatusDot className="mt-[0.6em]" />
                   <span>
                     {seekingLead}
                     <span className="whitespace-nowrap">{identity.availability}</span>

@@ -36,6 +36,7 @@ export default {
       animation: {
         "fade-up": "fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards",
         "scale-in": "scale-in 0.6s ease-out forwards",
+        halo: "halo 2.4s ease-in-out infinite",
       },
       keyframes: {
         "fade-up": {
@@ -45,6 +46,10 @@ export default {
         "scale-in": {
           "0%": { opacity: "0", transform: "scale(0.98)" },
           "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        halo: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.35", transform: "scale(1.8)" },
         },
       },
     },

@@ -3,7 +3,34 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Section from "./Section";
+import StatusDot from "./StatusDot";
 import { useLocale } from "./LocaleProvider";
+
+const LIGHT = {
+  row: "border-t border-paper-line first:border-t-0",
+  strong: "text-ink",
+  soft: "text-ink-soft",
+  muted: "text-ink-muted",
+  subtle: "text-ink-subtle",
+  faint: "text-ink-faint",
+  hover: "hover:text-ink",
+  rule: "bg-ink-faint",
+  accent: "border-ink",
+};
+
+// The current job is an inverted band; the 100vmax shadow, clipped to the
+// row's height, stretches its background across the whole page width.
+const DARK = {
+  row: "bg-ink shadow-[0_0_0_100vmax_theme(colors.ink.DEFAULT)] [clip-path:inset(0_-100vmax)] [&+li]:border-t-0",
+  strong: "text-paper",
+  soft: "text-paper/85",
+  muted: "text-paper/70",
+  subtle: "text-paper/60",
+  faint: "text-paper/50",
+  hover: "hover:text-paper",
+  rule: "bg-paper/40",
+  accent: "border-paper",
+};
 
 export default function Experience() {
   const { data, t } = useLocale();
@@ -31,6 +58,7 @@ export default function Experience() {
       <ol className="relative">
         {data.experience.map((exp, i) => {
           const isOpen = openIndex === i;
+          const c = exp.current ? DARK : LIGHT;
           return (
             <motion.li
               key={i}
@@ -39,32 +67,31 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className="border-t border-paper-line first:border-t-0 scroll-mt-20"
+              className={`scroll-mt-20 ${c.row}`}
             >
               {/* The toggle button is stretched over the whole row (after:inset-0);
                   the company link sits above it so it stays clickable. */}
               <div className="group relative grid grid-cols-[1fr_auto] md:grid-cols-12 gap-6 py-10">
                 <div className="md:col-span-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-2">
+                  <div className={`text-eyebrow uppercase mb-2 ${c.faint}`}>
                     {String(i + 1).padStart(2, "0")} / {String(data.experience.length).padStart(2, "0")}
                   </div>
-                  <div className="flex items-center gap-2 font-mono text-sm text-ink">
-                    {exp.current ? (
-                      <span className="h-1.5 w-1.5 rounded-full bg-ink ring-4 ring-ink/10" aria-hidden />
-                    ) : null}
+                  <div className={`flex items-center gap-3 font-mono text-sm ${c.strong}`}>
+                    {exp.current ? <StatusDot tone="paper" /> : null}
                     {exp.period}
                   </div>
-                  <div className="mt-1 text-sm text-ink-subtle">{exp.location}</div>
+                  <div className={`mt-1 text-sm ${c.subtle}`}>{exp.location}</div>
                 </div>
 
                 {/* Beside the dates on mobile so the title keeps the full width */}
                 <ToggleIcon
                   open={isOpen}
+                  dark={c === DARK}
                   className="self-center md:order-last md:col-span-1 md:justify-self-end"
                 />
 
                 <div className="col-span-2 md:col-span-8">
-                  <h3 className="font-display text-2xl md:text-3xl text-ink leading-tight">
+                  <h3 className={`font-display text-2xl md:text-3xl leading-tight ${c.strong}`}>
                     <button
                       type="button"
                       id={`experience-${i}-trigger`}
@@ -76,20 +103,20 @@ export default function Experience() {
                       {exp.role}
                     </button>
                   </h3>
-                  <p className="mt-1 text-sm text-ink-muted">
+                  <p className={`mt-1 text-sm ${c.muted}`}>
                     {exp.url ? (
                       <a
                         href={exp.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="link-reveal z-10 hover:text-ink transition-colors"
+                        className={`link-reveal z-10 transition-colors ${c.hover}`}
                       >
                         {exp.company} <span aria-hidden>↗</span>
                       </a>
                     ) : (
                       exp.company
                     )}
-                    {exp.via ? <span className="text-ink-faint"> · {exp.via}</span> : null}
+                    {exp.via ? <span className={c.faint}> · {exp.via}</span> : null}
                   </p>
                 </div>
               </div>
@@ -123,24 +150,24 @@ export default function Experience() {
                         {exp.bullets.length ? (
                           <ul className="space-y-3">
                             {exp.bullets.map((b, bi) => (
-                              <li key={bi} className="flex text-ink-soft leading-relaxed">
-                                <span className="mr-4 mt-[0.7em] h-px w-4 flex-none bg-ink-faint" aria-hidden />
+                              <li key={bi} className={`flex leading-relaxed ${c.soft}`}>
+                                <span className={`mr-4 mt-[0.7em] h-px w-4 flex-none ${c.rule}`} aria-hidden />
                                 <span>{b}</span>
                               </li>
                             ))}
                           </ul>
                         ) : null}
                         {exp.highlight ? (
-                          <p className="pl-4 border-l-2 border-ink text-sm italic text-ink-muted text-justify">
+                          <p className={`pl-4 border-l-2 text-sm italic text-justify ${c.accent} ${c.muted}`}>
                             {t.experience.achievement} : {exp.highlight}
                           </p>
                         ) : null}
                         {exp.tools?.length ? (
                           <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                            <span className="text-eyebrow uppercase text-ink-faint">
+                            <span className={`text-eyebrow uppercase ${c.faint}`}>
                               {t.experience.tools}
                             </span>
-                            <span className="font-mono text-xs text-ink-muted">
+                            <span className={`font-mono text-xs ${c.muted}`}>
                               {exp.tools.join(" · ")}
                             </span>
                           </p>
@@ -158,22 +185,32 @@ export default function Experience() {
   );
 }
 
-function ToggleIcon({ open, className = "" }: { open: boolean; className?: string }) {
+function ToggleIcon({
+  open,
+  dark = false,
+  className = "",
+}: {
+  open: boolean;
+  dark?: boolean;
+  className?: string;
+}) {
+  // On the dark band the colours are mirrored.
+  const filled = dark ? "border-paper bg-paper" : "border-ink bg-ink";
+  const outlined = dark
+    ? "border-paper/30 bg-ink group-hover:border-paper"
+    : "border-paper-line bg-paper group-hover:border-ink";
+  const line = open === dark ? "bg-ink" : "bg-paper";
   return (
     <span
       aria-hidden
       className={`relative h-10 w-10 rounded-full border transition-colors duration-300 ${
-        open ? "border-ink bg-ink" : "border-paper-line bg-paper group-hover:border-ink"
+        open ? filled : outlined
       } ${className}`}
     >
+      <span className={`absolute inset-0 m-auto h-px w-3.5 transition-colors duration-300 ${line}`} />
       <span
-        className={`absolute inset-0 m-auto h-px w-3.5 transition-colors duration-300 ${
-          open ? "bg-paper" : "bg-ink"
-        }`}
-      />
-      <span
-        className={`absolute inset-0 m-auto h-px w-3.5 transition duration-500 ${
-          open ? "bg-paper" : "rotate-90 bg-ink"
+        className={`absolute inset-0 m-auto h-px w-3.5 transition duration-500 ${line} ${
+          open ? "" : "rotate-90"
         }`}
       />
     </span>

@@ -15,7 +15,6 @@ const TOOL_HOVER: Record<string, string> = {
 export default function Skills() {
   const { data, t } = useLocale();
   const { skills, languages } = data;
-  // Each admin / personal skill can carry an example from her jobs as proof.
   const groups = [
     { title: t.skills.admin, items: skills.admin },
     { title: t.skills.human, items: skills.human },
@@ -57,11 +56,8 @@ export default function Skills() {
               <h3 className="text-eyebrow uppercase text-ink-faint mb-4">{g.title}</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {g.items.map((s) => (
-                  <li key={s.name} className="border-t border-paper-line py-3">
-                    <div className="text-[15px] text-ink">{s.name}</div>
-                    {s.example ? (
-                      <div className="mt-1 text-xs leading-relaxed text-ink-subtle">{s.example}</div>
-                    ) : null}
+                  <li key={s} className="border-t border-paper-line py-3 text-[15px] text-ink">
+                    {s}
                   </li>
                 ))}
               </ul>

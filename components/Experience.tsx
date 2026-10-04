@@ -76,8 +76,12 @@ export default function Experience() {
                   <div className={`text-eyebrow uppercase mb-2 ${c.faint}`}>
                     {String(i + 1).padStart(2, "0")} / {String(data.experience.length).padStart(2, "0")}
                   </div>
-                  <div className={`flex items-center gap-3 font-mono text-sm ${c.strong}`}>
-                    {exp.current ? <StatusDot tone="paper" /> : null}
+                  <div
+                    className={`flex items-center gap-3 font-mono text-sm ${
+                      exp.current ? "text-emerald-400" : c.strong
+                    }`}
+                  >
+                    {exp.current ? <StatusDot onDark /> : null}
                     {exp.period}
                   </div>
                   <div className={`mt-1 text-sm ${c.subtle}`}>{exp.location}</div>

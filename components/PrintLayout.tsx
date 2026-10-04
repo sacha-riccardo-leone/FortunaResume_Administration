@@ -162,8 +162,8 @@ export default function PrintLayout() {
         <SectionTitle>{t.print.skillsTitle}</SectionTitle>
         <dl className="mt-[1.8mm] space-y-[1.2mm]">
           <SkillRow label={t.print.skillsTools} items={skills.tools} />
-          <SkillRow label={t.print.skillsAdmin} items={skills.admin.map((s) => s.name)} />
-          <SkillRow label={t.print.skillsHuman} items={skills.human.map((s) => s.name)} />
+          <SkillRow label={t.print.skillsAdmin} items={skills.admin} />
+          <SkillRow label={t.print.skillsHuman} items={skills.human} />
         </dl>
       </section>
 

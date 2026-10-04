@@ -13,7 +13,7 @@ const reveal = (delay = 0) => ({
 
 export default function Hero() {
   const { data, t } = useLocale();
-  const { identity, contact, languages } = data;
+  const { identity, contact } = data;
   // Split around the availability so "80 – 100 %" can be kept on one line.
   const [seekingLead, seekingTail] = t.hero.seeking("\u0000", identity.start).split("\u0000");
 
@@ -66,7 +66,7 @@ export default function Hero() {
                 <p className="mt-2 text-ink-muted text-lg leading-relaxed">
                   {identity.tagline}.
                 </p>
-                <p className="mt-6 flex gap-3 text-ink leading-relaxed">
+                <p className="mt-6 flex gap-3 text-emerald-700 leading-relaxed">
                   <StatusDot className="mt-[0.6em]" />
                   <span>
                     {seekingLead}
@@ -74,17 +74,6 @@ export default function Hero() {
                     {seekingTail}
                   </span>
                 </p>
-                <ul aria-label={t.skills.languages} className="mt-5 flex flex-wrap gap-2">
-                  {languages.map((l) => (
-                    <li
-                      key={l.name}
-                      className="rounded-full border border-paper-line px-3 py-1 text-xs text-ink-muted"
-                    >
-                      {/* "B1 — Intermédiaire" → "B1" */}
-                      <span className="text-ink">{l.name}</span> · {l.level.split(" — ")[0]}
-                    </li>
-                  ))}
-                </ul>
               </div>
 
               <div className="md:col-span-5 md:text-right grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:gap-2 text-sm">

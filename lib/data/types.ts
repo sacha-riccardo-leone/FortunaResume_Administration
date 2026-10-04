@@ -23,11 +23,6 @@ export type LanguageEntry = {
   score: number;
 };
 
-export type SkillEntry = {
-  name: string;
-  example?: string;
-};
-
 export type ResumeData = {
   meta: {
     siteTitle: string;
@@ -57,8 +52,8 @@ export type ResumeData = {
   education: EducationEntry[];
   skills: {
     tools: string[];
-    admin: SkillEntry[];
-    human: SkillEntry[];
+    admin: string[];
+    human: string[];
   };
   languages: LanguageEntry[];
   interests: string[];

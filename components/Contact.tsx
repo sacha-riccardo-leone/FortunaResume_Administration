@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLocale } from "./LocaleProvider";
+import Icon from "./Icon";
 
 export default function Contact() {
   const { data, t } = useLocale();
@@ -65,7 +66,9 @@ export default function Contact() {
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-paper/20 pt-10"
         >
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.emailLabel}</div>
+            <div className="mb-3 flex text-paper/50">
+              <Icon name="gmail" label={t.contact.emailLabel} className="h-5 w-5" />
+            </div>
             <a
               href={`mailto:${contact.email}`}
               className="text-xl md:text-2xl font-display link-reveal break-all"
@@ -74,13 +77,17 @@ export default function Contact() {
             </a>
           </div>
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.phoneLabel}</div>
+            <div className="mb-3 flex text-paper/50">
+              <Icon name="phone" label={t.contact.phoneLabel} className="h-5 w-5" />
+            </div>
             <a href={`tel:${contact.phone}`} className="text-xl md:text-2xl font-display link-reveal">
               {contact.phoneFormatted}
             </a>
           </div>
           <div>
-            <div className="text-eyebrow uppercase text-paper/50 mb-3">{t.contact.addressLabel}</div>
+            <div className="mb-3 flex text-paper/50">
+              <Icon name="pin" label={t.contact.addressLabel} className="h-5 w-5" />
+            </div>
             <p className="text-xl md:text-2xl font-display leading-tight">
               {contact.address}
               <br />

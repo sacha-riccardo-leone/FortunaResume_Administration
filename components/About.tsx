@@ -3,13 +3,14 @@
 import { motion } from "framer-motion";
 import Section from "./Section";
 import { useLocale } from "./LocaleProvider";
+import Icon, { type IconName } from "./Icon";
 
 export default function About() {
   const { data, t } = useLocale();
   const { profile, identity, interests } = data;
-  const facts = [
-    { label: t.about.bornOn, value: identity.birth },
-    { label: t.about.nationality, value: identity.nationality },
+  const facts: { label: string; value: string; icon: IconName }[] = [
+    { label: t.about.bornOn, value: identity.birth, icon: "cake" },
+    { label: t.about.nationality, value: identity.nationality, icon: "flag" },
   ];
 
   return (
@@ -34,13 +35,17 @@ export default function About() {
         >
           <dl className="space-y-4 border-l border-paper-line pl-6">
             {facts.map((f) => (
-              <div key={f.label} className="flex items-baseline justify-between gap-4">
-                <dt className="text-eyebrow uppercase text-ink-faint">{f.label}</dt>
+              <div key={f.label} className="flex items-center justify-between gap-4">
+                <dt className="flex text-ink-faint">
+                  <Icon name={f.icon} label={f.label} />
+                </dt>
                 <dd className="text-sm text-ink font-medium">{f.value}</dd>
               </div>
             ))}
             <div className="pt-4 [&>dd+dd]:mt-2">
-              <dt className="text-eyebrow uppercase text-ink-faint mb-3">{t.about.interests}</dt>
+              <dt className="mb-3 flex text-ink-faint">
+                <Icon name="heart" label={t.about.interests} />
+              </dt>
               {interests.map((i) => (
                 <dd key={i} className="text-sm text-ink font-medium leading-snug">
                   {i}

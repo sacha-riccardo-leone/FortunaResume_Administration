@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLocale } from "./LocaleProvider";
+import Icon from "./Icon";
 import StatusDot from "./StatusDot";
 
 const reveal = (delay = 0) => ({
@@ -78,23 +79,31 @@ export default function Hero() {
 
               <div className="md:col-span-5 md:text-right grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:gap-2 text-sm">
                 <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">{t.hero.locationLabel}</div>
+                  <div className="mb-1.5 flex text-ink-faint md:justify-end">
+                    <Icon name="pin" label={t.hero.locationLabel} />
+                  </div>
                   <div>{contact.postal}</div>
                 </div>
                 <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">{t.hero.phoneLabel}</div>
+                  <div className="mb-1.5 flex text-ink-faint md:justify-end">
+                    <Icon name="phone" label={t.hero.phoneLabel} />
+                  </div>
                   <a href={`tel:${contact.phone}`} className="link-reveal">
                     {contact.phoneFormatted}
                   </a>
                 </div>
                 <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">{t.hero.emailLabel}</div>
+                  <div className="mb-1.5 flex text-ink-faint md:justify-end">
+                    <Icon name="gmail" label={t.hero.emailLabel} />
+                  </div>
                   <a href={`mailto:${contact.email}`} className="link-reveal break-all">
                     {contact.email}
                   </a>
                 </div>
                 <div className="border-t border-paper-line pt-3">
-                  <div className="text-eyebrow uppercase text-ink-faint mb-1">LinkedIn</div>
+                  <div className="mb-1.5 flex text-ink-faint md:justify-end">
+                    <Icon name="linkedin" label="LinkedIn" />
+                  </div>
                   <a
                     href={contact.linkedin}
                     target="_blank"

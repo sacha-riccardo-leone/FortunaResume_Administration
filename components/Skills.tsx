@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Section from "./Section";
 import { useLocale } from "./LocaleProvider";
+import Icon from "./Icon";
 
 // Hover colours sampled from each app's icon (its lettered tile).
 const TOOL_HOVER: Record<string, string> = {
@@ -72,7 +73,9 @@ export default function Skills() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-eyebrow uppercase text-ink-faint mb-6">{t.skills.languages}</h3>
+            <h3 className="mb-6 flex text-ink-faint">
+              <Icon name="languages" label={t.skills.languages} />
+            </h3>
             <ul className="space-y-5">
               {languages.map((l) => (
                 <li key={l.name}>

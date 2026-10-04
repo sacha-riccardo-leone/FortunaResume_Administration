@@ -35,19 +35,20 @@ export default function About() {
         >
           <dl className="space-y-4 border-l border-paper-line pl-6">
             {facts.map((f) => (
-              <div key={f.label} className="flex items-center justify-between gap-4">
+              <div key={f.label} className="flex items-center gap-3">
                 <dt className="flex text-ink-faint">
                   <Icon name={f.icon} label={f.label} />
                 </dt>
                 <dd className="text-sm text-ink font-medium">{f.value}</dd>
               </div>
             ))}
-            <div className="pt-4 [&>dd+dd]:mt-2">
-              <dt className="mb-3 flex text-ink-faint">
+            {/* Icon in the first column, the interests stacked in the second */}
+            <div className="grid grid-cols-[auto_1fr] items-center gap-x-3 gap-y-2">
+              <dt className="flex text-ink-faint">
                 <Icon name="heart" label={t.about.interests} />
               </dt>
               {interests.map((i) => (
-                <dd key={i} className="text-sm text-ink font-medium leading-snug">
+                <dd key={i} className="col-start-2 text-sm text-ink font-medium leading-snug">
                   {i}
                 </dd>
               ))}

@@ -9,7 +9,7 @@ export default function PrintButton() {
       type="button"
       onClick={() => window.print()}
       aria-label={t.print.ariaLabel}
-      className="print:hidden fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 inline-flex items-center gap-2 rounded-full bg-ink text-paper px-4 sm:px-5 py-3 text-[12px] sm:text-[13px] tracking-wide shadow-[0_8px_30px_rgba(0,0,0,0.18)] hover:bg-ink-soft transition-colors duration-300"
+      className="inline-flex h-11 items-center gap-2 rounded-full bg-ink text-paper px-4 sm:px-5 text-[12px] sm:text-[13px] tracking-wide shadow-[0_8px_30px_rgba(0,0,0,0.18)] hover:bg-ink-soft transition-colors duration-300"
     >
       <svg
         width="14"

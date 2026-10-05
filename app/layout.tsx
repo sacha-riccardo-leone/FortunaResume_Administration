@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import { resumeData } from "@/lib/data";
+import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const sans = Inter_Tight({
@@ -30,7 +31,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${sans.variable} ${mono.variable}`}>
+    // The theme script adds "dark" to <html> before React hydrates.
+    <html lang="fr" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="font-sans text-ink bg-paper antialiased">{children}</body>
     </html>
   );

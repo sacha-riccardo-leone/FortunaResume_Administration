@@ -8,6 +8,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import PrintButton from "@/components/PrintButton";
 import PrintLayout from "@/components/PrintLayout";
+import ThemeToggle from "@/components/ThemeToggle";
 import { LocaleProvider } from "@/components/LocaleProvider";
 
 export default function Page() {
@@ -25,7 +26,10 @@ export default function Page() {
           <Footer />
         </div>
         <PrintLayout />
-        <PrintButton />
+        <div className="print:hidden fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2">
+          <ThemeToggle />
+          <PrintButton />
+        </div>
       </main>
     </LocaleProvider>
   );

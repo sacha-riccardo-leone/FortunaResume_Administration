@@ -13,6 +13,7 @@ export type UIDictionary = {
     openMenu: string;
     closeMenu: string;
     selectLanguage: string;
+    darkMode: string;
   };
   hero: {
     eyebrowIndex: string; // e.g. "01 — Profil"
@@ -93,6 +94,7 @@ const fr: UIDictionary = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     selectLanguage: "Choisir la langue",
+    darkMode: "Mode sombre",
   },
   hero: {
     eyebrowIndex: "01 — Profil",
@@ -176,6 +178,7 @@ const en: UIDictionary = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     selectLanguage: "Select language",
+    darkMode: "Dark mode",
   },
   hero: {
     eyebrowIndex: "01 — Profile",
@@ -259,6 +262,7 @@ const de: UIDictionary = {
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
     selectLanguage: "Sprache wählen",
+    darkMode: "Dunkelmodus",
   },
   hero: {
     eyebrowIndex: "01 — Profil",
@@ -342,6 +346,7 @@ const it: UIDictionary = {
     openMenu: "Apri il menu",
     closeMenu: "Chiudi il menu",
     selectLanguage: "Seleziona la lingua",
+    darkMode: "Modalità scura",
   },
   hero: {
     eyebrowIndex: "01 — Profilo",

@@ -14,7 +14,7 @@ export default function Contact() {
         className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgb(var(--paper)) 1px, transparent 0)",
           backgroundSize: "28px 28px",
         }}
         aria-hidden

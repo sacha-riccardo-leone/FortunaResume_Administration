@@ -5,21 +5,23 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      // Values live in app/globals.css so the dark theme can swap them.
       colors: {
         ink: {
-          DEFAULT: "#0A0A0A",
-          soft: "#1A1A1A",
-          muted: "#525252",
-          subtle: "#737373",
-          faint: "#A3A3A3",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted) / <alpha-value>)",
+          subtle: "rgb(var(--ink-subtle) / <alpha-value>)",
+          faint: "rgb(var(--ink-faint) / <alpha-value>)",
         },
         paper: {
-          DEFAULT: "#FFFFFF",
-          soft: "#FAFAFA",
-          warm: "#F5F5F4",
-          line: "#E7E5E4",
+          DEFAULT: "rgb(var(--paper) / <alpha-value>)",
+          soft: "rgb(var(--paper-soft) / <alpha-value>)",
+          warm: "rgb(var(--paper-warm) / <alpha-value>)",
+          line: "rgb(var(--paper-line) / <alpha-value>)",
         },
       },
       fontFamily: {

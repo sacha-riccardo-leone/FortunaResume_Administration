@@ -67,7 +67,7 @@ export default function Hero() {
                 <p className="mt-2 text-ink-muted text-lg leading-relaxed">
                   {identity.tagline}.
                 </p>
-                <p className="mt-6 flex gap-3 text-emerald-700 leading-relaxed">
+                <p className="mt-6 flex gap-3 text-emerald-700 dark:text-emerald-400 leading-relaxed">
                   <StatusDot className="mt-[0.6em]" />
                   <span>
                     {seekingLead}

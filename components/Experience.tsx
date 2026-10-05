@@ -21,7 +21,7 @@ const LIGHT = {
 // The current job is an inverted band; the 100vmax shadow, clipped to the
 // row's height, stretches its background across the whole page width.
 const DARK = {
-  row: "bg-ink shadow-[0_0_0_100vmax_theme(colors.ink.DEFAULT)] [clip-path:inset(0_-100vmax)] [&+li]:border-t-0",
+  row: "bg-ink shadow-[0_0_0_100vmax_rgb(var(--ink))] [clip-path:inset(0_-100vmax)] [&+li]:border-t-0",
   strong: "text-paper",
   soft: "text-paper/85",
   muted: "text-paper/70",
@@ -78,10 +78,10 @@ export default function Experience() {
                   </div>
                   <div
                     className={`flex items-center gap-3 font-mono text-sm ${
-                      exp.current ? "text-emerald-400" : c.strong
+                      exp.current ? "text-emerald-400 dark:text-emerald-700" : c.strong
                     }`}
                   >
-                    {exp.current ? <StatusDot onDark /> : null}
+                    {exp.current ? <StatusDot inverse /> : null}
                     {exp.period}
                   </div>
                   <div className={`mt-1 text-sm ${c.subtle}`}>{exp.location}</div>

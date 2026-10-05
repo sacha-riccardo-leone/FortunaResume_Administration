@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Palette as RGB channels so Tailwind's opacity modifiers keep working
+   (text-paper/50, bg-ink/10, …). */
 :root {
-  --paper: #ffffff;
-  --ink: #0a0a0a;
+  --ink: 10 10 10;
+  --ink-soft: 26 26 26;
+  --ink-muted: 82 82 82;
+  --ink-subtle: 115 115 115;
+  --ink-faint: 163 163 163;
+  --paper: 255 255 255;
+  --paper-soft: 250 250 250;
+  --paper-warm: 245 245 244;
+  --paper-line: 231 229 228;
+  color-scheme: light;
+}
+
+/* Dark mode inverts the palette. Screen only: the PDF always prints light. */
+@media screen {
+  .dark {
+    --ink: 245 245 245;
+    --ink-soft: 229 229 229;
+    --ink-muted: 173 173 173;
+    --ink-subtle: 140 140 140;
+    --ink-faint: 107 107 107;
+    --paper: 10 10 10;
+    --paper-soft: 17 17 17;
+    --paper-warm: 22 22 22;
+    --paper-line: 38 38 38;
+    color-scheme: dark;
+  }
 }
 
 * {
@@ -17,31 +43,37 @@ html {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
   font-feature-settings: "ss01", "cv11";
 }
 
 ::selection {
-  background: #0a0a0a;
-  color: #ffffff;
+  background: rgb(var(--ink));
+  color: rgb(var(--paper));
 }
 
 /* Ultra-thin horizontal rule */
 .hairline {
-  background: linear-gradient(to right, transparent, #d4d4d4 20%, #d4d4d4 80%, transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgb(var(--ink-faint) / 0.5) 20%,
+    rgb(var(--ink-faint) / 0.5) 80%,
+    transparent
+  );
   height: 1px;
 }
 
 .number-caret::before {
   content: "—";
   margin-right: 0.75rem;
-  color: #a3a3a3;
+  color: rgb(var(--ink-faint));
   font-weight: 400;
 }
 
 .dot-grid {
-  background-image: radial-gradient(circle, #e7e5e4 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgb(var(--paper-line)) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 

@@ -1,13 +1,11 @@
 export const THEME_STORAGE_KEY = "fortuna-cv-theme";
 
-// Runs in <head> before the page paints: applies the saved theme, or the
-// system preference when the visitor hasn't chosen one, so there's no flash.
+// Runs in <head> before the page paints, so there's no flash. Light is the
+// default for everyone; dark only applies once the visitor has chosen it.
 export const themeInitScript = `(function () {
   try {
-    var stored = localStorage.getItem("${THEME_STORAGE_KEY}");
-    var dark = stored
-      ? stored === "dark"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (dark) document.documentElement.classList.add("dark");
+    if (localStorage.getItem("${THEME_STORAGE_KEY}") === "dark") {
+      document.documentElement.classList.add("dark");
+    }
   } catch (e) {}
 })();`;

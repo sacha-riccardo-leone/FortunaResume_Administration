@@ -55,7 +55,7 @@ export default function Education() {
                   <li key={d.file} className="border-b border-paper-line">
                     <a
                       href={`/documents/${d.file}`}
-                      download={`Fortuna-Chung-${d.file}`}
+                      download={d.file}
                       className="group flex items-start justify-between gap-4 py-4"
                     >
                       <span className="min-w-0">

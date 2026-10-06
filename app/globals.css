@@ -99,6 +99,18 @@ body {
   transform-origin: left;
 }
 
+/* Theme switch: no cross-fade; ThemeToggle animates the new theme's snapshot
+   as a circle growing from the button. The starting clip is pinned here so
+   the new theme never flashes unclipped before that animation starts. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+:root[data-theme-transition="active"]::view-transition-new(root) {
+  clip-path: var(--theme-transition-from);
+}
+
 /* ───────────────────────────────────────────────────────────────
    Print: A4 resume layout
    ─────────────────────────────────────────────────────────────── */

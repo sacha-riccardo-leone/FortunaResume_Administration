@@ -63,7 +63,13 @@ export default function Education() {
                           {d.title}
                         </span>
                         <span className="mt-1 block text-xs text-ink-muted">
-                          {d.issuer} · <span className="font-mono">{d.date}</span>
+                          {d.issuer}
+                          {d.date ? (
+                            <>
+                              {" · "}
+                              <span className="font-mono">{d.date}</span>
+                            </>
+                          ) : null}
                         </span>
                       </span>
                       <span className="mt-0.5 flex flex-none items-center gap-2 text-ink-faint transition-colors group-hover:text-ink">

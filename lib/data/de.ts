@@ -135,6 +135,11 @@ export const de: ResumeData = {
         date: "23.04.2019",
         file: "certificat-travail-laccueil.pdf",
       },
+      {
+        title: "Arbeitszeugnis — Verkäuferin als Aushilfe (2015 – 2016)",
+        issuer: "Au Coq d’Or, La Chaux-de-Fonds",
+        file: "certificat-travail-au-coq-dor.pdf",
+      },
     ],
   },
   skills: {

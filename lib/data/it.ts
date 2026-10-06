@@ -135,6 +135,11 @@ export const it: ResumeData = {
         date: "23.04.2019",
         file: "certificat-travail-laccueil.pdf",
       },
+      {
+        title: "Certificato di lavoro — Commessa ausiliaria (2015 – 2016)",
+        issuer: "Au Coq d’Or, La Chaux-de-Fonds",
+        file: "certificat-travail-au-coq-dor.pdf",
+      },
     ],
   },
   skills: {

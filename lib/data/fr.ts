@@ -135,6 +135,11 @@ export const fr: ResumeData = {
         date: "23.04.2019",
         file: "certificat-travail-laccueil.pdf",
       },
+      {
+        title: "Certificat de travail — Vendeuse en extra (2015 – 2016)",
+        issuer: "Au Coq d’Or, La Chaux-de-Fonds",
+        file: "certificat-travail-au-coq-dor.pdf",
+      },
     ],
   },
   skills: {

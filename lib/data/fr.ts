@@ -101,6 +101,42 @@ export const fr: ResumeData = {
       school: "Formation inter-entreprise (1 journée)",
     },
   ],
+  documents: {
+    diplomas: [
+      {
+        title: "Attestation de formation — Opératrice polyvalente en horlogerie",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "23.12.2021",
+        file: "attestation-formation-pole-industrie.pdf",
+      },
+      {
+        title: "Attestation intermédiaire de formation — Opératrice polyvalente en horlogerie",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "09.11.2021",
+        file: "attestation-intermediaire-pole-industrie.pdf",
+      },
+      {
+        title: "CFC d’assistante socio-éducative — Bulletin de notes",
+        issuer: "Canton de Neuchâtel",
+        date: "01.07.2019",
+        file: "cfc-assistante-socio-educative.pdf",
+      },
+    ],
+    certificates: [
+      {
+        title: "Certificat de travail — Opératrice en horlogerie (mission temporaire)",
+        issuer: "Interima SA, Bienne",
+        date: "28.12.2023",
+        file: "certificat-travail-interima.pdf",
+      },
+      {
+        title: "Certificat de travail intermédiaire — Apprentissage d’assistante socio-éducative",
+        issuer: "Association L’Accueil, Saint-Blaise",
+        date: "23.04.2019",
+        file: "certificat-travail-laccueil.pdf",
+      },
+    ],
+  },
   skills: {
     tools: [
       "Microsoft Word",

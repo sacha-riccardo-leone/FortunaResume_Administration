@@ -5,7 +5,13 @@ import { de } from "./de";
 import { it } from "./it";
 import type { ResumeData } from "./types";
 
-export type { ResumeData, ExperienceEntry, EducationEntry, LanguageEntry } from "./types";
+export type {
+  ResumeData,
+  ExperienceEntry,
+  EducationEntry,
+  LanguageEntry,
+  DocumentEntry,
+} from "./types";
 
 export const dataByLocale: Record<Locale, ResumeData> = { fr, en, de, it };
 

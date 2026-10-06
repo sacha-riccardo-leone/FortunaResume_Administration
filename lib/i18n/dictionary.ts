@@ -43,6 +43,10 @@ export type UIDictionary = {
   };
   education: {
     eyebrow: string;
+    diplomas: string;
+    certificates: string;
+    download: string;
+    documentsNote: string; // empty when the documents are already in the page's language
   };
   contact: {
     eyebrow: string;
@@ -125,6 +129,10 @@ const fr: UIDictionary = {
   },
   education: {
     eyebrow: "Formation",
+    diplomas: "Diplômes et attestations",
+    certificates: "Certificats de travail",
+    download: "Télécharger",
+    documentsNote: "",
   },
   contact: {
     eyebrow: "Contact",
@@ -209,6 +217,10 @@ const en: UIDictionary = {
   },
   education: {
     eyebrow: "Education",
+    diplomas: "Diplomas and training certificates",
+    certificates: "Work certificates",
+    download: "Download",
+    documentsNote: "The documents are in French.",
   },
   contact: {
     eyebrow: "Contact",
@@ -293,6 +305,10 @@ const de: UIDictionary = {
   },
   education: {
     eyebrow: "Ausbildung",
+    diplomas: "Diplome und Bestätigungen",
+    certificates: "Arbeitszeugnisse",
+    download: "Herunterladen",
+    documentsNote: "Die Dokumente sind auf Französisch.",
   },
   contact: {
     eyebrow: "Kontakt",
@@ -377,6 +393,10 @@ const it: UIDictionary = {
   },
   education: {
     eyebrow: "Formazione",
+    diplomas: "Diplomi e attestati",
+    certificates: "Certificati di lavoro",
+    download: "Scarica",
+    documentsNote: "I documenti sono in francese.",
   },
   contact: {
     eyebrow: "Contatto",

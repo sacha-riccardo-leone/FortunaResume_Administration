@@ -101,6 +101,42 @@ export const it: ResumeData = {
       school: "Formazione interaziendale (1 giornata)",
     },
   ],
+  documents: {
+    diplomas: [
+      {
+        title: "Attestato di formazione — Operatrice polivalente in orologeria",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "23.12.2021",
+        file: "attestation-formation-pole-industrie.pdf",
+      },
+      {
+        title: "Attestato intermedio di formazione — Operatrice polivalente in orologeria",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "09.11.2021",
+        file: "attestation-intermediaire-pole-industrie.pdf",
+      },
+      {
+        title: "AFC di assistente socio-educativa — Certificato delle note",
+        issuer: "Cantone di Neuchâtel",
+        date: "01.07.2019",
+        file: "cfc-assistante-socio-educative.pdf",
+      },
+    ],
+    certificates: [
+      {
+        title: "Certificato di lavoro — Operatrice in orologeria (missione temporanea)",
+        issuer: "Interima SA, Bienne",
+        date: "28.12.2023",
+        file: "certificat-travail-interima.pdf",
+      },
+      {
+        title: "Certificato di lavoro intermedio — Apprendistato di assistente socio-educativa",
+        issuer: "Association L’Accueil, Saint-Blaise",
+        date: "23.04.2019",
+        file: "certificat-travail-laccueil.pdf",
+      },
+    ],
+  },
   skills: {
     tools: [
       "Microsoft Word",

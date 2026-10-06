@@ -101,6 +101,42 @@ export const de: ResumeData = {
       school: "Betriebsübergreifende Schulung (1 Tag)",
     },
   ],
+  documents: {
+    diplomas: [
+      {
+        title: "Ausbildungsbestätigung — Polyvalente Uhrenoperatorin",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "23.12.2021",
+        file: "attestation-formation-pole-industrie.pdf",
+      },
+      {
+        title: "Zwischenbestätigung der Ausbildung — Polyvalente Uhrenoperatorin",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "09.11.2021",
+        file: "attestation-intermediaire-pole-industrie.pdf",
+      },
+      {
+        title: "EFZ Sozialpädagogische Assistentin — Notenausweis",
+        issuer: "Kanton Neuenburg",
+        date: "01.07.2019",
+        file: "cfc-assistante-socio-educative.pdf",
+      },
+    ],
+    certificates: [
+      {
+        title: "Arbeitszeugnis — Operatorin im Uhrenbereich (Temporäreinsatz)",
+        issuer: "Interima SA, Biel",
+        date: "28.12.2023",
+        file: "certificat-travail-interima.pdf",
+      },
+      {
+        title: "Zwischenzeugnis — Lehre als Sozialpädagogische Assistentin",
+        issuer: "Association L’Accueil, Saint-Blaise",
+        date: "23.04.2019",
+        file: "certificat-travail-laccueil.pdf",
+      },
+    ],
+  },
   skills: {
     tools: [
       "Microsoft Word",

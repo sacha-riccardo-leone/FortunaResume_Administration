@@ -101,6 +101,42 @@ export const en: ResumeData = {
       school: "Inter-company training (1 day)",
     },
   ],
+  documents: {
+    diplomas: [
+      {
+        title: "Training certificate — Multi-skilled watchmaking operator",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "23.12.2021",
+        file: "attestation-formation-pole-industrie.pdf",
+      },
+      {
+        title: "Interim training certificate — Multi-skilled watchmaking operator",
+        issuer: "Pôle Industrie, Le Locle",
+        date: "09.11.2021",
+        file: "attestation-intermediaire-pole-industrie.pdf",
+      },
+      {
+        title: "CFC socio-educational assistant — Grade report",
+        issuer: "Canton of Neuchâtel",
+        date: "01.07.2019",
+        file: "cfc-assistante-socio-educative.pdf",
+      },
+    ],
+    certificates: [
+      {
+        title: "Work certificate — Watchmaking operator (temporary assignment)",
+        issuer: "Interima SA, Biel",
+        date: "28.12.2023",
+        file: "certificat-travail-interima.pdf",
+      },
+      {
+        title: "Interim work certificate — Socio-educational assistant apprenticeship",
+        issuer: "Association L’Accueil, Saint-Blaise",
+        date: "23.04.2019",
+        file: "certificat-travail-laccueil.pdf",
+      },
+    ],
+  },
   skills: {
     tools: [
       "Microsoft Word",

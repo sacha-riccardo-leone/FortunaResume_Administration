@@ -23,6 +23,14 @@ export type LanguageEntry = {
   score: number;
 };
 
+// A downloadable PDF in public/documents/ (the scans themselves are in French).
+export type DocumentEntry = {
+  title: string;
+  issuer: string;
+  date: string;
+  file: string;
+};
+
 export type ResumeData = {
   meta: {
     siteTitle: string;
@@ -50,6 +58,10 @@ export type ResumeData = {
   profile: string;
   experience: ExperienceEntry[];
   education: EducationEntry[];
+  documents: {
+    diplomas: DocumentEntry[];
+    certificates: DocumentEntry[];
+  };
   skills: {
     tools: string[];
     admin: string[];

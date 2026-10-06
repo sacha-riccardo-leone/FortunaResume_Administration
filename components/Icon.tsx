@@ -10,7 +10,8 @@ export type IconName =
   | "gmail"
   | "linkedin"
   | "sun"
-  | "moon";
+  | "moon"
+  | "download";
 
 // Outline icons from Lucide (ISC) and app logos from Simple Icons (CC0),
 // all drawn in currentColor so they take the colour of the surrounding text.
@@ -76,6 +77,13 @@ const PATHS: Record<IconName, ReactNode> = {
     </>
   ),
   moon: <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />,
+  download: (
+    <>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <path d="m7 10 5 5 5-5" />
+      <path d="M12 15V3" />
+    </>
+  ),
 };
 
 // App logos are solid shapes; the rest are outline icons.

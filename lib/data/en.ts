@@ -136,8 +136,9 @@ export const en: ResumeData = {
         file: "certificat-travail-laccueil.pdf",
       },
       {
-        title: "Work certificate — Part-time sales assistant (2015 – 2016)",
+        title: "Work certificate — Sales assistant",
         issuer: "Au Coq d’Or, La Chaux-de-Fonds",
+        date: "2015 — 2016",
         file: "certificat-travail-au-coq-dor.pdf",
       },
     ],

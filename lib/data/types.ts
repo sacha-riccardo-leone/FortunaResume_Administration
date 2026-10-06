@@ -27,7 +27,7 @@ export type LanguageEntry = {
 export type DocumentEntry = {
   title: string;
   issuer: string;
-  date?: string; // issue date, when the document shows one
+  date?: string; // issue date, or the period covered when the document has no date
   file: string;
 };
 

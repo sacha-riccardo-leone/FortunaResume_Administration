@@ -10,6 +10,7 @@ import PrintButton from "@/components/PrintButton";
 import PrintLayout from "@/components/PrintLayout";
 import ThemeToggle from "@/components/ThemeToggle";
 import { LocaleProvider } from "@/components/LocaleProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Page() {
   return (
@@ -31,6 +32,9 @@ export default function Page() {
           <PrintButton />
         </div>
       </main>
+      {/* Vercel Web Analytics (cookieless) on the CV only, so Fortuna's own
+          visits to /lettre don't count as visitors. */}
+      <Analytics />
     </LocaleProvider>
   );
 }

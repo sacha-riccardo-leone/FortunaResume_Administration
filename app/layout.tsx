@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { resumeData } from "@/lib/data";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
@@ -36,7 +37,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body className="font-sans text-ink bg-paper antialiased">{children}</body>
+      <body className="font-sans text-ink bg-paper antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

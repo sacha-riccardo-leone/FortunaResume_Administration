@@ -18,18 +18,14 @@ const LIGHT = {
   accent: "border-ink",
 };
 
-// The current job is an inverted band; the 100vmax shadow, clipped to the
+// The current job sits on a grey band; the 100vmax shadow, clipped to the
 // row's height, stretches its background across the whole page width.
-const DARK = {
-  row: "bg-ink shadow-[0_0_0_100vmax_rgb(var(--ink))] [clip-path:inset(0_-100vmax)] [&+li]:border-t-0",
-  strong: "text-paper",
-  soft: "text-paper/85",
-  muted: "text-paper/70",
-  subtle: "text-paper/60",
-  faint: "text-paper/50",
-  hover: "hover:text-paper",
-  rule: "bg-paper/40",
-  accent: "border-paper",
+// Secondary text is one step darker there to keep its contrast on the grey.
+const CURRENT = {
+  ...LIGHT,
+  row: "bg-paper-line shadow-[0_0_0_100vmax_rgb(var(--paper-line))] [clip-path:inset(0_-100vmax)] [&+li]:border-t-0",
+  subtle: "text-ink-muted",
+  faint: "text-ink-subtle",
 };
 
 export default function Experience() {
@@ -58,7 +54,7 @@ export default function Experience() {
       <ol className="relative">
         {data.experience.map((exp, i) => {
           const isOpen = openIndex === i;
-          const c = exp.current ? DARK : LIGHT;
+          const c = exp.current ? CURRENT : LIGHT;
           return (
             <motion.li
               key={i}
@@ -78,10 +74,10 @@ export default function Experience() {
                   </div>
                   <div
                     className={`flex items-center gap-3 font-mono text-sm ${
-                      exp.current ? "text-emerald-400 dark:text-emerald-700" : c.strong
+                      exp.current ? "text-emerald-800 dark:text-emerald-400" : c.strong
                     }`}
                   >
-                    {exp.current ? <StatusDot inverse /> : null}
+                    {exp.current ? <StatusDot /> : null}
                     {exp.period}
                   </div>
                   <div className={`mt-1 text-sm ${c.subtle}`}>{exp.location}</div>
@@ -90,7 +86,6 @@ export default function Experience() {
                 {/* Beside the dates on mobile so the title keeps the full width */}
                 <ToggleIcon
                   open={isOpen}
-                  dark={c === DARK}
                   className="self-center md:order-last md:col-span-1 md:justify-self-end"
                 />
 
@@ -189,26 +184,13 @@ export default function Experience() {
   );
 }
 
-function ToggleIcon({
-  open,
-  dark = false,
-  className = "",
-}: {
-  open: boolean;
-  dark?: boolean;
-  className?: string;
-}) {
-  // On the dark band the colours are mirrored.
-  const filled = dark ? "border-paper bg-paper" : "border-ink bg-ink";
-  const outlined = dark
-    ? "border-paper/30 bg-ink group-hover:border-paper"
-    : "border-paper-line bg-paper group-hover:border-ink";
-  const line = open === dark ? "bg-ink" : "bg-paper";
+function ToggleIcon({ open, className = "" }: { open: boolean; className?: string }) {
+  const line = open ? "bg-paper" : "bg-ink";
   return (
     <span
       aria-hidden
       className={`relative h-10 w-10 rounded-full border transition-colors duration-300 ${
-        open ? filled : outlined
+        open ? "border-ink bg-ink" : "border-paper-line bg-paper group-hover:border-ink"
       } ${className}`}
     >
       <span className={`absolute inset-0 m-auto h-px w-3.5 transition-colors duration-300 ${line}`} />
